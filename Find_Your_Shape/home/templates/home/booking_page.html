@@ -12,17 +12,39 @@
             Book Your Classes and Assessments here!
         </h1>
     </header>
+    <section>
     <h2>
         Book a HIIT Class
     </h2>
+    <table>
+            {% for item in hiitclasses %}
+                <tr>
+                    <td>{{ item.trainer }}</td>
+                    <td>{{ item.focus }}</td>
+                    <td>{{ item.time }}</td>
+                    <td>{{ item.slots }}</td>
+                    <td>{{ item.spaces }}</td>
+                </tr>
+            {% endfor %}
+    </table>
+    <h3>
+        <a href="bookingin.html">Book your slot!</a>
+    </h3>
+    </section>
+    <section>
     <h2>
         Book a Spin Class
     </h2>
+    </section>
+    <section>
     <h2>
         Book an Assessment
     </h2>
+    </section>
+    <section>
     <h2>
         Book a Personal Training Session
     </h2>
+    </section>
 </body>
 </html>
