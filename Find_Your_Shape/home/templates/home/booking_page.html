@@ -11,25 +11,31 @@
         <h1>
             Book Your Classes and Assessments here!
         </h1>
+        <h2>
+            Meet our Trainers! 
+        </h2>
     </header>
     <section>
     <h2>
         Book a HIIT Class
     </h2>
+    <h3>
+        Lukas' Classes
+    </h3>
     <table>
             {% for item in hiitclasses %}
                 <tr>
-                    <td>{{ item.trainer }}</td>
                     <td>{{ item.focus }}</td>
                     <td>{{ item.time }}</td>
-                    <td>{{ item.slots }}</td>
-                    <td>{{ item.spaces }}</td>
                 </tr>
             {% endfor %}
     </table>
     <h3>
-        <a href="bookingin.html">Book your slot!</a>
+        Fionas Classes
     </h3>
+    <h5>
+        <a href="bookingin.html">Book your slot!</a>
+    </h5>
     </section>
     <section>
     <h2>
