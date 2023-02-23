@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import hiitbook, hittclasses
 from .forms import ClassForm
 
@@ -30,3 +30,18 @@ def bookingin(request):
         'form': ClassForm
     }
     return render(request, "home/bookingin.html", context)
+
+
+def editing(request, item_id):
+    item = get_object_or_404(hittclasses, id=item_id)
+    if request.method == 'POST':
+        form = ClassForm(request.POST, instance=item)
+        if form.is_valid():
+            form.save()
+        return redirect('booking')
+
+    form = ClassForm(instance=item)
+    context = {
+        'form': ClassForm
+    }
+    return render(request, 'home/editing.html', context)

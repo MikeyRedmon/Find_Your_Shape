@@ -68,6 +68,13 @@
                 <td>{{ item.trainer }}</td>
                 <td>{{ item.focus }}</td>
             </tr>
+            <td>
+                <a href="/editing/{{ item.id }}">
+                    <button>
+                        Edit Your Booking
+                    </button>
+                </a>
+            </td>
         {% endfor %}
     </table>
     <h5>
