@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import hiitbook, hittclasses
+from .forms import ClassForm
 
 # Create your views here.
 
@@ -10,18 +11,22 @@ def home(request):
 
 def booking(request):
     if request.method == 'POST':
-        name = request.POST.get('item_name')
-        trainer = request.POST.get('item_trainer')
-        focus = request.POST.get('item_focus')
-        time = request.POST.get('item_time')
-        hittclasses.objects.Create(name=name, trainer=trainer, focus=focus, time=time)
-        return redirect('booking')
+        form = ClassForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('booking')
+
+    hittclass = hittclasses.objects.all()
     hiitbooks = hiitbook.objects.all()
     context = {
-        'hiitclasses':  hiitbooks
+        'hittclass': hittclass,
+        'hiitclasses':  hiitbooks,
     }
     return render(request, "home/booking_page.html", context)
 
 
 def bookingin(request):
-    return render(request, "home/bookingin.html")
+    context = {
+        'form': ClassForm
+    }
+    return render(request, "home/bookingin.html", context)

@@ -15,30 +15,7 @@
 
     <form method="post" action="booking">
         {% csrf_token %}
-        <div>
-            <p>
-                <label for="id_name">Name:</label>
-                <input type="text" id="id_name" name="item_name">
-            </p>
-        </div>
-        <div>
-            <p>
-                <label for="id_trainer">Trainer:</label>
-                <input type="text" id="id_trainer" name="item_trainer">
-            </p>
-        </div>
-        <div>
-            <p>
-                <label for="id_focus">Focus:</label>
-                <input type="text" id="id_focus" name="item_focus">
-            </p>
-        </div>
-        <div>
-            <p>
-                <label for="id_time">Time:</label>
-                <input type="date" id="id_time" name="item_time">
-            </p>
-        </div>
+        {{ form.as_p }}
         <div>
             <button>Confirm Your Booking!</button>
         </div>

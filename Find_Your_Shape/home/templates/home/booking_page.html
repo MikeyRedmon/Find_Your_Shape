@@ -40,9 +40,6 @@
             </tr>
         {% endfor %}
 </table>
-    <h5>
-        <a href="{% url 'bookingin' %}">Book a class with Lukas!</a>
-    </h5>
     <h3>
         Fionas Classes
     </h3>
@@ -54,9 +51,6 @@
             </tr>
         {% endfor %}
     </table>
-    <h5>
-        <a href="{% url 'bookingin' %}">Book a class with Fiona!</a>
-    </h5>
     </section>
     <section>
     <h2>
@@ -67,14 +61,15 @@
     <h2>
         Book an Assessment
     </h2>
-    <!-- <table>
-        {% for item in hiitclasses %}
+    <table>
+        {% for item in hittclass %}
             <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.trainer }}</td>
                 <td>{{ item.focus }}</td>
-                <td>{{ item.time }}</td>
             </tr>
         {% endfor %}
-    </table> -->
+    </table>
     <h5>
         <a href="{% url 'bookingin' %}">Book your slot!</a>
     </h5>
