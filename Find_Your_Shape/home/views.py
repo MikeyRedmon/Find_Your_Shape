@@ -35,14 +35,14 @@ def bookingin(request):
 
 def editing(request, item_id):
     item = get_object_or_404(hittclasses, id=item_id)
+    form = BookForm(instance=item)
     if request.method == 'POST':
-        form = ClassForm(request.POST, instance=hittclasses)
         if form.is_valid():
             form.save()
         return redirect('booking')
 
     form = ClassForm(instance=item)
     context = {
-        'form': ClassForm
+        'form': form
     }
     return render(request, 'home/editing.html', context)
