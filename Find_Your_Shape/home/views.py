@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import hiitbook, hittclasses
-from .forms import ClassForm
+from .forms import ClassForm, BookForm
 
 # Create your views here.
 
@@ -11,7 +11,7 @@ def home(request):
 
 def booking(request):
     if request.method == 'POST':
-        form = ClassForm(request.POST)
+        form = BookForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('booking')
