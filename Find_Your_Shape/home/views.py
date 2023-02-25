@@ -35,14 +35,20 @@ def bookingin(request):
 
 def editing(request, item_id):
     item = get_object_or_404(hittclasses, id=item_id)
-    form = BookForm(instance=item)
-    if request.method == 'POST':
-        if form.is_valid():
-            form.save()
-        return redirect('booking')
-
-    form = ClassForm(instance=item)
+    form = BookingForm(instance=item)
     context = {
         'form': form
     }
+    
+    if request.method == 'POST':
+        form = BookingForm(request.POST, instance=item)
+        if form.is_valid():
+            form.save()
+            return redirect("booking")
+
     return render(request, 'home/editing.html', context)
+
+def deleting(request, item_id):
+    item = get_object_or_404(hittclasses, id=item_id)
+    item.delete()
+    return redirect("booking")
