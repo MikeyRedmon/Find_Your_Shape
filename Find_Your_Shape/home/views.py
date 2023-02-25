@@ -11,10 +11,11 @@ def home(request):
 
 def booking(request):
     if request.method == 'POST':
-        form = BookForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('booking')
+        name = request.POST.get('item_name')
+        trainer = request.POST.get('item_trainer')
+        focus = request.POST.get('item_focus')
+        hittclasses.objects.create(name=name, trainer=trainer, focus=focus)
+        return redirect("booking")
 
     hittclass = hittclasses.objects.all()
     hiitbooks = hiitbook.objects.all()
@@ -35,7 +36,7 @@ def bookingin(request):
 def editing(request, item_id):
     item = get_object_or_404(hittclasses, id=item_id)
     if request.method == 'POST':
-        form = ClassForm(request.POST, instance=item)
+        form = ClassForm(request.POST, instance=hittclasses)
         if form.is_valid():
             form.save()
         return redirect('booking')
