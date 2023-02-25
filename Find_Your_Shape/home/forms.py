@@ -1,14 +1,8 @@
 from django import forms
-from .models import hittclasses, hiitbook
+from .models import hittclasses
 
 
-class ClassForm(forms.ModelForm):
-    class Meta:
-        model = hiitbook
-        fields = ['name', 'focus', 'time']
-
-
-class BookForm(forms.ModelForm):
+class BookingForm(forms.ModelForm):
     class Meta:
         model = hittclasses
         fields = ['name', 'trainer', 'focus']
