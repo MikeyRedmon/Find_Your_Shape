@@ -19,3 +19,13 @@ class hittclasses(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class PtClasses(models.Model):
+    name = models.CharField(max_length=10, null=False, blank=False)
+    trainer = models.CharField(max_length=10, null=False, blank=False)
+    focus = models.CharField(max_length=50, null=False, blank=False)
+    time = models.DateTimeField(null=False, blank=False)
+
+    def __str__(self):
+        return self.name

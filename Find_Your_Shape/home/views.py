@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import hiitbook, hittclasses
+from .models import hiitbook, hittclasses, PtClasses
 from .forms import BookingForm
 
 # Create your views here.
@@ -32,6 +32,13 @@ def bookingin(request):
     }
     return render(request, "home/bookingin.html", context)
 
+
+def bookingin(request):
+    form = BookingPT()
+    context = {
+        'form': form
+    }
+    return render(request, "home/bookingin.html", context)
 
 def editing(request, item_id):
     item = get_object_or_404(hittclasses, id=item_id)
