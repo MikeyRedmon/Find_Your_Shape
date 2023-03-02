@@ -23,5 +23,6 @@ urlpatterns = [
     path('booking', views.booking, name='booking'),
     path('bookingin', views.bookingin, name='bookingin'),
     path('editing/<item_id>', views.editing, name='editing'),
-    path('deleting/<item_id>', views.deleting, name='deleting')
+    path('deleting/<item_id>', views.deleting, name='deleting'),
+    path('bookinginSes', views.bookinginSes, name='bookinginSes'),
 ]

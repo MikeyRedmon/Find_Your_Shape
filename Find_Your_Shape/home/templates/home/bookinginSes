@@ -13,9 +13,9 @@
 </header>
 <body>
 
-    <form method="post">
+    <form method="post" action="booking">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ Book.as_p }}
             <p>
             <button>Confirm Your Booking!</button>
             </p>
