@@ -10,12 +10,6 @@ def home(request):
 
 
 def booking(request):
-    
-    if request.method == 'POST':
-        form = BookingForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("booking")
 
     hittclass = hittclasses.objects.all()
     hiitbooks = hiitbook.objects.all()
@@ -30,6 +24,12 @@ def booking(request):
 
 def bookingin(request):
 
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("booking")
+
     formSes = BookingForm()
     context = {
         'form': formSes
@@ -38,6 +38,12 @@ def bookingin(request):
 
 
 def bookinginSes(request):
+    
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("booking")
        
     Book = BookingPT()
     context = {
@@ -62,7 +68,20 @@ def editing(request, item_id):
 
     return render(request, 'home/editing.html', context)
 
+def editingpt(request, item_id):
+    item = get_object_or_404(PtClasses, id=item_id)
+    Book = BookingPT(instance=item)
+    context = {
+        'form': Book
+    }
 
+    if request.method == 'POST':
+        formSes = BookingPT(request.POST, instance=item)
+        if formSes.is_valid():
+            formSes.save()
+            return redirect("booking")
+
+    return render(request, 'home/editingpt.html', context)
 
 
 def deleting(request, item_id):
@@ -71,7 +90,7 @@ def deleting(request, item_id):
     return redirect("booking")
 
 
-
-
-
-
+def deletingpt(request, item_id):
+    item = get_object_or_404(PtClasses, id=item_id)
+    item.delete()
+    return redirect("booking")

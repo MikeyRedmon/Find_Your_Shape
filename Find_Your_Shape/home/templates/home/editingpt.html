@@ -8,20 +8,17 @@
 </head>
 <header>
     <h1>
-        We can't wait to see you!
+        Edit Your Booking
     </h1>
-    <li>
-        <a href="{% url 'booking' %}">Home</a>
-    </li>
 </header>
 <body>
 
-    <form method="post">
+    <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <div>
             <p>
-            <button type="submit" onclick="alert('Thank you for booking with us!')">Confirm Your Booking!</button>
+            <button type="submit" onclick="alert('Your booking has been changed!')">Edit Your Booking</button>
             </p>
         </div>
     </form>

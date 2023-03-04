@@ -11,9 +11,6 @@
         <h1>
             Book Your Classes and Assessments here!
         </h1>
-        <li>
-            <a href="{% url 'booking' %}">Home</a>
-        </li>
     </header>
     <section>
     <h2>
@@ -109,7 +106,7 @@
                     <td>{{ item.time }}</td>
                 </tr>
                 <td>
-                    <a href="/editing/{{ item.id }}">
+                    <a href="/editingpt/{{ item.id }}">
                         <button>
                             Edit
                         </button>
