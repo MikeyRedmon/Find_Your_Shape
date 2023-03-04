@@ -62,20 +62,7 @@ def editing(request, item_id):
 
     return render(request, 'home/editing.html', context)
 
-def editing(request, item_id):
-    item = get_object_or_404(PtClasses, id=item_id)
-    formSes = BookingPT(instance=item)
-    context = {
-        'form': formSes
-    }
 
-    if request.method == 'POST':
-        formSes = BookingForm(request.POST, instance=item)
-        if formSes.is_valid():
-            formSes.save()
-            return redirect("booking")
-
-    return render(request, 'home/editing.html', context)
 
 
 def deleting(request, item_id):
