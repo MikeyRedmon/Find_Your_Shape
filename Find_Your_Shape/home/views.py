@@ -8,13 +8,6 @@ from .forms import BookingForm, BookingPT, users
 def home(request):
     return render(request, "home/home_page.html")
 
-def login(request):
-    user = users.objects.all()
-    context = {
-        'form':user
-    }
-    return render(request, "home/login.html")
-
 def booking(request):
 
     hittclass = hittclasses.objects.all()
