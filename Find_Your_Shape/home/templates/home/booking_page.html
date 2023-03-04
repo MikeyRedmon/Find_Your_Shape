@@ -17,7 +17,7 @@
     </header>
     <section>
     <h2>
-        Book a HIIT Class
+        Check out our HIIT Class Schedule
     </h2>
     <h3>
         Lukas' Classes
@@ -56,6 +56,14 @@
     <h2>
         Book a Spin Class
     </h2>
+    <!-- <table>
+        {% for item in hiitclasses %}
+            <tr>
+                <td>{{ item.music }}</td>
+                <td>{{ item.time }}</td>
+            </tr>
+        {% endfor %}
+    </table> -->
     </section>
     <section>
     <h2>
@@ -88,37 +96,4 @@
         <a href="{% url 'bookingin' %}">Book your slot!</a>
     </h5>
     </section>
-    <section>
-    <h2>
-        Book a Personal Training Session
-    </h2>
-    <h5>
-        <a href="{% url 'bookinginSes' %}">Book your slot!</a>
-    </h5>
-    <table>
-        {% for item in ptClasses %}
-            <tr>
-                <td>{{ item.name }}</td>
-                <td>{{ item.trainer }}</td>
-                <td>{{ item.focus }}</td>
-                <td>{{ item.time }}</td>
-            </tr>
-            <td>
-                <a href="/editing/{{ item.id }}">
-                    <button>
-                        Edit
-                    </button>
-                </a>
-            </td>
-            <td>
-                <a href="/deleting/{{ item.id }}">
-                    <button>
-                        Delete
-                    </button>
-                </a>
-            </td>
-        {% endfor %}
-    </table>
-    </section>
-</body>
-</html>
+

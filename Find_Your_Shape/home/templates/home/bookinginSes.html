@@ -16,7 +16,7 @@
 </header>
 <body>
 
-    <form method="post">
+    <form method="post" action="bookingin">
         {% csrf_token %}
         {{ Book.as_p }}
             <p>

@@ -10,16 +10,16 @@ def home(request):
 
 
 def booking(request):
-
+    
     if request.method == 'POST':
-        form = BookingPT(request.POST)
+        form = BookingForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect("booking")
 
     hittclass = hittclasses.objects.all()
     hiitbooks = hiitbook.objects.all()
-    ptClass = PtClasses
+    ptClass = PtClasses.objects.all()
     context = {
         'ptClass': ptClass,
         'hittclass': hittclass,
@@ -30,12 +30,6 @@ def booking(request):
 
 def bookingin(request):
 
-    if request.method == 'POST':
-        form = BookingForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("booking")
-
     formSes = BookingForm()
     context = {
         'form': formSes
@@ -44,10 +38,12 @@ def bookingin(request):
 
 
 def bookinginSes(request):
+       
     Book = BookingPT()
     context = {
         'form': Book
     }
+        
     return render(request, "home/bookingin.html", context)
 
 
@@ -66,8 +62,29 @@ def editing(request, item_id):
 
     return render(request, 'home/editing.html', context)
 
+def editing(request, item_id):
+    item = get_object_or_404(PtClasses, id=item_id)
+    formSes = BookingPT(instance=item)
+    context = {
+        'form': formSes
+    }
+
+    if request.method == 'POST':
+        formSes = BookingForm(request.POST, instance=item)
+        if formSes.is_valid():
+            formSes.save()
+            return redirect("booking")
+
+    return render(request, 'home/editing.html', context)
+
 
 def deleting(request, item_id):
     item = get_object_or_404(hittclasses, id=item_id)
     item.delete()
     return redirect("booking")
+
+
+
+
+
+
