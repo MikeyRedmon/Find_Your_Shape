@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import hiitbook, hittclasses, PtClasses
-from .forms import BookingForm, BookingPT
+from .forms import BookingForm, BookingPT, users
 
 # Create your views here.
 
@@ -8,6 +8,12 @@ from .forms import BookingForm, BookingPT
 def home(request):
     return render(request, "home/home_page.html")
 
+def login(request):
+    user = users.objects.all()
+    context = {
+        'form':user
+    }
+    return render(request, "home/login.html")
 
 def booking(request):
 
