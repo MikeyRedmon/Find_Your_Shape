@@ -96,4 +96,35 @@
         <a href="{% url 'bookingin' %}">Book your slot!</a>
     </h5>
     </section>
-
+    <section>
+        <h2>
+            Book A Personal Training Session
+        </h2>
+        <table>
+            {% for item in ptClass %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.trainer }}</td>
+                    <td>{{ item.focus }}</td>
+                    <td>{{ item.time }}</td>
+                </tr>
+                <td>
+                    <a href="/editing/{{ item.id }}">
+                        <button>
+                            Edit
+                        </button>
+                    </a>
+                </td>
+                <td>
+                    <a href="/deleting/{{ item.id }}">
+                        <button>
+                            Delete
+                        </button>
+                    </a>
+                </td>
+            {% endfor %}
+        </table>
+        <h5>
+            <a href="{% url 'bookinginSes' %}">Book your slot!</a>
+        </h5>
+        </section>
