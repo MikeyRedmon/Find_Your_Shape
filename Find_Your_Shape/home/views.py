@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import hiitbook, hittclasses, PtClasses
-from .forms import BookingForm, BookingPT, users
+from .forms import BookingForm, BookingPT
 
 # Create your views here.
 
 
 def home(request):
     return render(request, "home/home_page.html")
+
 
 def booking(request):
 
@@ -37,18 +38,18 @@ def bookingin(request):
 
 
 def bookinginSes(request):
-    
+
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect("booking")
-       
+
     Book = BookingPT()
     context = {
         'form': Book
     }
-        
+
     return render(request, "home/bookingin.html", context)
 
 
@@ -66,6 +67,7 @@ def editing(request, item_id):
             return redirect("booking")
 
     return render(request, 'home/editing.html', context)
+
 
 def editingpt(request, item_id):
     item = get_object_or_404(PtClasses, id=item_id)
