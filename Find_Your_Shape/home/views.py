@@ -40,7 +40,7 @@ def bookingin(request):
 def bookinginSes(request):
 
     if request.method == 'POST':
-        form = BookingForm(request.POST)
+        form = BookingPT(request.POST)
         if form.is_valid():
             form.save()
             return redirect("booking")
