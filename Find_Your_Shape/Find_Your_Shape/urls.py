@@ -25,5 +25,6 @@ urlpatterns = [
     path('editing/<item_id>', views.editing, name='edit'),
     path('deleting/<item_id>', views.deleting, name='deleting'),
     path('bookinginSes', views.bookinginSes, name='bookinginSes'),
-    path('editingpt/<item_id>', views.editingpt, name='editpt')
+    path('editingpt/<item_id>', views.editingpt, name='editpt'),
+    path('register', views.register_request, name='register')
 ]

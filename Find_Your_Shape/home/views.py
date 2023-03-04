@@ -1,12 +1,28 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth import login
+from django.contrib import messages
 from .models import hiitbook, hittclasses, PtClasses
-from .forms import BookingForm, BookingPT
+from .forms import BookingForm, BookingPT, NewUserForm
 
 # Create your views here.
 
 
 def home(request):
     return render(request, "home/home_page.html")
+
+
+def register_request(request):
+    if request.method == 'POST':
+        form = NewUserForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            messages.success(request, "Registration Successful")
+            return redirect('home/booking_page.html')
+        messages.error(request, "Registration Failed, Please Try again")
+    form = NewUserForm()
+    return render(request, "home/register.html",
+                  context={"register_form": form})
 
 
 def booking(request):
