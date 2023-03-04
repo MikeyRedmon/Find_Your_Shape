@@ -19,6 +19,7 @@
     <form method="post" action="bookingin">
         {% csrf_token %}
         {{ Book.as_p }}
+        <div>
             <p>
             <button>Confirm Your Booking!</button>
             </p>

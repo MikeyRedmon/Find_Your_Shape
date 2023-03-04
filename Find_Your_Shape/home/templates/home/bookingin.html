@@ -19,12 +19,12 @@
     <form method="post" action="booking">
         {% csrf_token %}
         {{ form.as_p }}
+        <div>
             <p>
-            <button>Confirm Your Booking!</button>
+            <button type="submit" onclick="alert('Thank you for booking with us!')">Confirm Your Booking!</button>
             </p>
         </div>
     </form>
-
 
 </body>
 </html>
