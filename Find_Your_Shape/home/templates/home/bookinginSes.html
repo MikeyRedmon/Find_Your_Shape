@@ -10,10 +10,13 @@
     <h1>
         We can't wait to see you!
     </h1>
+    <li>
+        <a href="{% url 'booking' %}">Home</a>
+    </li>
 </header>
 <body>
 
-    <form method="post" action="booking">
+    <form method="post">
         {% csrf_token %}
         {{ Book.as_p }}
             <p>
