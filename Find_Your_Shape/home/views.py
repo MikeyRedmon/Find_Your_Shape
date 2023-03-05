@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate 
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from .models import hiitbook, hittclasses, PtClasses
 from .forms import BookingForm, BookingPT, NewUserForm
@@ -11,6 +12,28 @@ def home(request):
     return render(request, "home/home_page.html")
 
 
+def login_request(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                messages.info(request, f"You are now logged in {username}")
+                return redirect("booking")
+            else:
+                messages.error(request, "Invalid Username or passward")
+        else:
+            messages.error(request, "Invalid Username or passward")
+    form = AuthenticationForm()
+    return render(request, "home/login.html",
+                context={"login_form":form})
+
+
+
+
 def register_request(request):
     if request.method == 'POST':
         form = NewUserForm(request.POST)
@@ -18,7 +41,7 @@ def register_request(request):
             user = form.save()
             login(request, user)
             messages.success(request, "Registration Successful")
-            return redirect('home/booking_page.html')
+            return redirect("booking")
         messages.error(request, "Registration Failed, Please Try again")
     form = NewUserForm()
     return render(request, "home/register.html",
