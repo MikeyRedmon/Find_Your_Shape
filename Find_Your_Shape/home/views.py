@@ -33,7 +33,6 @@ def login_request(request):
 
 
 
-
 def register_request(request):
     if request.method == 'POST':
         form = NewUserForm(request.POST)
