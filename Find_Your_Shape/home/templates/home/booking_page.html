@@ -25,8 +25,25 @@
                     <td>{{ item.focus }}</td>
                     <td>{{ item.time }}</td>
                 </tr>
+                <td>
+                    <a href="/editinghiit/{{ item.id }}">
+                        <button>
+                            Edit
+                        </button>
+                    </a>
+                </td>
+                <td>
+                    <a href="/deletinghiit/{{ item.id }}">
+                        <button>
+                            Delete
+                        </button>
+                    </a>
+                </td>
             {% endfor %}
     </table>
+    <h5>
+    <a href="{% url 'hiitclasses' %}">Add a class</a>
+    </h5>
     <table>
         {% for item in hittstudent %}
             <tr>
@@ -35,7 +52,22 @@
                 <td>{{ item.focus }}</td>
                 <td>{{ item.time }}</td>
             </tr>
+            <td>
+                <a href="/editinghiit/{{ item.id }}">
+                    <button>
+                        Edit
+                    </button>
+                </a>
+            </td>
+            <td>
+                <a href="/deletinghiit/{{ item.id }}">
+                    <button>
+                        Delete
+                    </button>
+                </a>
+            </td>
         {% endfor %}
+
 </table>
     <h3>
         Fionas Classes
@@ -46,8 +78,25 @@
                 <td>{{ item.focus }}</td>
                 <td>{{ item.time }}</td>
             </tr>
+            <td>
+                <a href="/editing/{{ item.id }}">
+                    <button>
+                        Edit
+                    </button>
+                </a>
+            </td>
+            <td>
+                <a href="/deleting/{{ item.id }}">
+                    <button>
+                        Delete
+                    </button>
+                </a>
+            </td>
         {% endfor %}
     </table>
+    <h5>
+        <a href="{% url 'hiitclasses' %}">Add a class</a>
+    </h5>
     </section>
     <section>
     <h2>
@@ -113,7 +162,7 @@
                     </a>
                 </td>
                 <td>
-                    <a href="/deleting/{{ item.id }}">
+                    <a href="/deletingpt/{{ item.id }}">
                         <button>
                             Delete
                         </button>

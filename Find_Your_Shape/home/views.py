@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth import login, authenticate 
+from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from .models import hiitbook, hittclasses, PtClasses
-from .forms import BookingForm, BookingPT, NewUserForm
+from .forms import BookingForm, BookingPT, NewUserForm, HittClassForm
 
 # Create your views here.
 
@@ -28,9 +28,7 @@ def login_request(request):
         else:
             messages.error(request, "Invalid Username or passward")
     form = AuthenticationForm()
-    return render(request, "home/login.html",
-                context={"login_form":form})
-
+    return render(request, "home/login.html", context={"login_form": form})
 
 
 def register_request(request):
@@ -91,6 +89,22 @@ def bookinginSes(request):
     return render(request, "home/bookingin.html", context)
 
 
+def hiitclass(request):
+
+    if request.method == 'POST':
+        form = HittClassForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("booking")
+
+    Hiit = HittClassForm()
+    context = {
+        'form': Hiit
+    }
+
+    return render(request, "home/bookingin.html", context)
+
+
 def editing(request, item_id):
     item = get_object_or_404(hittclasses, id=item_id)
     formSes = BookingForm(instance=item)
@@ -123,6 +137,22 @@ def editingpt(request, item_id):
     return render(request, 'home/editingpt.html', context)
 
 
+def editinghiit(request, item_id):
+    item = get_object_or_404(hiitbook, id=item_id)
+    Book = HittClassForm(instance=item)
+    context = {
+        'form': Book
+    }
+
+    if request.method == 'POST':
+        form = HittClassForm(request.POST, instance=item)
+        if form.is_valid():
+            form.save()
+            return redirect("booking")
+
+    return render(request, 'home/editinghiit.html', context)
+
+
 def deleting(request, item_id):
     item = get_object_or_404(hittclasses, id=item_id)
     item.delete()
@@ -131,5 +161,11 @@ def deleting(request, item_id):
 
 def deletingpt(request, item_id):
     item = get_object_or_404(PtClasses, id=item_id)
+    item.delete()
+    return redirect("booking")
+
+
+def deletinghiit(request, item_id):
+    item = get_object_or_404(hiitbook, id=item_id)
     item.delete()
     return redirect("booking")

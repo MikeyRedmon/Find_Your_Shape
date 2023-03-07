@@ -12,6 +12,15 @@ class hiitbook(models.Model):
         return self.name
 
 
+class SpinClasses(models.Model):
+    name = models.CharField(max_length=10, null=False, blank=False)
+    focus = models.CharField(max_length=50, null=False, blank=False)
+    time = models.DateTimeField(max_length=10)
+
+    def __str__(self):
+        return self.name
+
+
 class hittclasses(models.Model):
     name = models.CharField(max_length=10, null=False, blank=False)
     trainer = models.CharField(max_length=10, null=False, blank=False)
@@ -27,13 +36,5 @@ class PtClasses(models.Model):
     focus = models.CharField(max_length=50, null=False, blank=False)
     time = models.DateTimeField(null=False, blank=False)
 
-    def __str__(self):
-        return self.name
-
-
-class users(models.Model):
-    name = models.CharField(max_length=25, null=False, blank=False)
-    password = models.CharField(max_length=50, null=False, blank=False)
-    
     def __str__(self):
         return self.name
