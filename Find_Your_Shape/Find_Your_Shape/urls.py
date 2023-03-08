@@ -24,12 +24,15 @@ urlpatterns = [
     path('bookingin', views.bookingin, name='bookingin'),
     path('bookinginSes', views.bookinginSes, name='bookinginSes'),
     path('hittclasses', views.hiitclass, name='hiitclasses'),
+    path('spinclasses', views.SpinBooking, name='spinclasses'),
     path('editing/<item_id>', views.editing, name='edit'),
     path('editinghiit/<item_id>', views.editinghiit, name='edit'),
+    path('editingspin/<item_id>', views.editingspin, name='editspin'),
     path('editingpt/<item_id>', views.editingpt, name='editpt'),
     path('deleting/<item_id>', views.deleting, name='deleting'),
     path('deletingpt/<item_id>', views.deletingpt, name='deletingpt'),
     path('deletinghiit/<item_id>', views.deletinghiit, name='deletinghiit'),
+    path('deletingspin/<item_id>', views.deletingspin, name='deletingspin'),
     path('register', views.register_request, name='register'),
     path('login', views.login_request, name='login')
 ]

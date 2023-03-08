@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
-from .models import hiitbook, hittclasses, PtClasses
-from .forms import BookingForm, BookingPT, NewUserForm, HittClassForm
+from .models import hiitbook, hittclasses, PtClasses, SpinClasses
+from .forms import BookingForm, BookingPT, NewUserForm, HittClassForm, SpinForm
 
 # Create your views here.
 
@@ -47,10 +47,12 @@ def register_request(request):
 
 def booking(request):
 
+    SpinClass = SpinClasses.objects.all()
     hittclass = hittclasses.objects.all()
     hiitbooks = hiitbook.objects.all()
     ptClass = PtClasses.objects.all()
     context = {
+        'SpinClass': SpinClass,
         'ptClass': ptClass,
         'hittclass': hittclass,
         'hiitclasses':  hiitbooks,
@@ -105,6 +107,22 @@ def hiitclass(request):
     return render(request, "home/bookingin.html", context)
 
 
+def SpinBooking(request):
+
+    if request.method == 'POST':
+        form = SpinForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("booking")
+
+    Spin = SpinForm()
+    context = {
+        'form': Spin
+    }
+
+    return render(request, "home/bookingin.html", context)
+
+
 def editing(request, item_id):
     item = get_object_or_404(hittclasses, id=item_id)
     formSes = BookingForm(instance=item)
@@ -153,6 +171,22 @@ def editinghiit(request, item_id):
     return render(request, 'home/editinghiit.html', context)
 
 
+def editingspin(request, item_id):
+    item = get_object_or_404(SpinClasses, id=item_id)
+    Book = SpinForm(instance=item)
+    context = {
+        'form': Book
+    }
+
+    if request.method == 'POST':
+        form = SpinForm(request.POST, instance=item)
+        if form.is_valid():
+            form.save()
+            return redirect("booking")
+
+    return render(request, 'home/editinghiit.html', context)
+
+
 def deleting(request, item_id):
     item = get_object_or_404(hittclasses, id=item_id)
     item.delete()
@@ -167,5 +201,11 @@ def deletingpt(request, item_id):
 
 def deletinghiit(request, item_id):
     item = get_object_or_404(hiitbook, id=item_id)
+    item.delete()
+    return redirect("booking")
+
+
+def deletingspin(request, item_id):
+    item = get_object_or_404(SpinClasses, id=item_id)
     item.delete()
     return redirect("booking")

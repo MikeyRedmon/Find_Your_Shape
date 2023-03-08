@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import hiitbook, hittclasses, PtClasses
+from .models import hiitbook, hittclasses, PtClasses, SpinClasses
 
 # Register your models here.
 
@@ -7,3 +7,4 @@ from .models import hiitbook, hittclasses, PtClasses
 admin.site.register(hiitbook)
 admin.site.register(hittclasses)
 admin.site.register(PtClasses)
+admin.site.register(SpinClasses)

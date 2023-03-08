@@ -16,12 +16,10 @@
     <h2>
         Check out our HIIT Class Schedule
     </h2>
-    <h3>
-        Lukas' Classes
-    </h3>
     <table>
             {% for item in hiitclasses %}
                 <tr>
+                    <td>{{ item.name }}</td>
                     <td>{{ item.focus }}</td>
                     <td>{{ item.time }}</td>
                 </tr>
@@ -44,49 +42,26 @@
     <h5>
     <a href="{% url 'hiitclasses' %}">Add a class</a>
     </h5>
+    <section>
+    <h2>
+        Here are our Spin Classes
+    </h2>
     <table>
-        {% for item in hittstudent %}
+        {% for item in SpinClass %}
             <tr>
                 <td>{{ item.name }}</td>
-                <td>{{ item.trainer }}</td>
-                <td>{{ item.focus }}</td>
+                <td>{{ item.genre }}</td>
                 <td>{{ item.time }}</td>
             </tr>
             <td>
-                <a href="/editinghiit/{{ item.id }}">
+                <a href="/editingspin/{{ item.id }}">
                     <button>
                         Edit
                     </button>
                 </a>
             </td>
             <td>
-                <a href="/deletinghiit/{{ item.id }}">
-                    <button>
-                        Delete
-                    </button>
-                </a>
-            </td>
-        {% endfor %}
-
-</table>
-    <h3>
-        Fionas Classes
-    </h3>
-    <table>
-        {% for item in hiitclasses %}
-            <tr>
-                <td>{{ item.focus }}</td>
-                <td>{{ item.time }}</td>
-            </tr>
-            <td>
-                <a href="/editing/{{ item.id }}">
-                    <button>
-                        Edit
-                    </button>
-                </a>
-            </td>
-            <td>
-                <a href="/deleting/{{ item.id }}">
+                <a href="/deletingspin/{{ item.id }}">
                     <button>
                         Delete
                     </button>
@@ -95,21 +70,8 @@
         {% endfor %}
     </table>
     <h5>
-        <a href="{% url 'hiitclasses' %}">Add a class</a>
+        <a href="{% url 'spinclasses' %}">Book your slot!</a>
     </h5>
-    </section>
-    <section>
-    <h2>
-        Book a Spin Class
-    </h2>
-    <!-- <table>
-        {% for item in hiitclasses %}
-            <tr>
-                <td>{{ item.music }}</td>
-                <td>{{ item.time }}</td>
-            </tr>
-        {% endfor %}
-    </table> -->
     </section>
     <section>
     <h2>
@@ -132,7 +94,7 @@
             <td>
                 <a href="/deleting/{{ item.id }}">
                     <button>
-                        Delete
+                        Delete 
                     </button>
                 </a>
             </td>

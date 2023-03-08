@@ -14,7 +14,7 @@ class hiitbook(models.Model):
 
 class SpinClasses(models.Model):
     name = models.CharField(max_length=10, null=False, blank=False)
-    focus = models.CharField(max_length=50, null=False, blank=False)
+    genre = models.CharField(max_length=10, null=False, blank=False)
     time = models.DateTimeField(max_length=10)
 
     def __str__(self):
