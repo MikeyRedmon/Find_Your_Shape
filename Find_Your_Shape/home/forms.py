@@ -34,7 +34,7 @@ class BookingPT(forms.ModelForm):
 class HittClassForm(forms.ModelForm):
     class Meta:
         model = hiitbook
-        fields = ['name','focus', 'time']
+        fields = ['name', 'focus', 'time']
 
 # New User Form
 
