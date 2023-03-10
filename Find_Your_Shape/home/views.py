@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from .models import hiitbook, hittclasses, PtClasses, SpinClasses
@@ -22,13 +22,19 @@ def login_request(request):
             if user is not None:
                 login(request, user)
                 messages.info(request, f"You are now logged in {username}")
-                return redirect("booking")
+                return redirect("home")
             else:
                 messages.error(request, "Invalid Username or passward")
         else:
             messages.error(request, "Invalid Username or passward")
     form = AuthenticationForm()
     return render(request, "home/login.html", context={"login_form": form})
+
+
+def logout_request(request):
+    logout(request)
+    messages.info(request, "You have successfully logged out.")
+    return redirect('home')
 
 
 def register_request(request):

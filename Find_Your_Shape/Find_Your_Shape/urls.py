@@ -34,5 +34,6 @@ urlpatterns = [
     path('deletinghiit/<item_id>', views.deletinghiit, name='deletinghiit'),
     path('deletingspin/<item_id>', views.deletingspin, name='deletingspin'),
     path('register', views.register_request, name='register'),
-    path('login', views.login_request, name='login')
+    path('login', views.login_request, name='login'),
+    path("logout", views.logout_request, name="logout")
 ]
