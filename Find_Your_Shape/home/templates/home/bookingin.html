@@ -11,7 +11,30 @@
         We can't wait to see you!
     </h1>
     <li>
-        <a href="{% url 'booking' %}">Home</a>
+        <nav>
+            <ul class="navbar-nav mr-auto">
+                {% if user.is_authenticated %}
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="logout">Logout</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="booking">Welcome, {{user.username}}</a>
+                </li>
+          
+                {% else %}
+          
+                <li>
+                    <a href="{% url 'booking' %}">Book Here!</a>
+                </li>
+                <li>
+                    <a href="register">Register Here</a>
+                </li>
+                <li>
+                    <a href="login">Login Here</a>
+                </li>
+                {% endif %}
+        </nav>
     </li>
 </header>
 <body>

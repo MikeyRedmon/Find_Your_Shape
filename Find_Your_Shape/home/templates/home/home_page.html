@@ -38,21 +38,31 @@
     <section>
         <h2>Welcome to Find Your Shape!</h2>
 
+        <h3>What is Find Your Shape?</h3>
+
+        <p>
+            Find Your Shape is a Private, Personable and Professional Gym with the Experiance, Expertise and Excellence required to help you reach your goals.  
+        </p>
 
 
+        <h3>Our Mission Goals</h3>
 
+        <p>
+            We don't want you to stop coming after the first week. We want you to know that everyones fitness journey, life and body are different and everyone
+            needs different motivation. We pride ourselves in being your 
+        </p>
 
-
+        
 
     </section>
     <footer>
         <nav>
             {% if user.is_authenticated %}
             
-            <li class="nav-item">
+            <li>
               <a class="nav-link" href="logout">Logout</a>
             </li>
-            <li class="nav-item">
+            <li>
               <a class="nav-link" href="booking">Welcome, {{user.username}}</a>
             </li>
       
