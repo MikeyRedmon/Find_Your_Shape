@@ -61,34 +61,23 @@
 
                     <p class="mainparagraph">
                         We don't want you to stop coming after the first week. We want you to know that everyones fitness journey, life and body are different and everyone
-                        needs different motivation. We pride ourselves in being your 
+                        needs different motivation. We pride ourselves in being driven by your goals, not by the every day ideals. 
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                
+                    <h3 class="thirdhead">Our Guarantee</h3>
+
+                    <p class="mainparagraph">
+                        We will support you as a team and your training partners, we understand that sometimes you'll fall off the cart, but we'll be right there to help you get back
+                        and keep working toward what your goals are. 
                     </p>
                 </div>
             </div>
     <footer>
-        <ul class="navbar-nav mr-auto list-inline">
-            {% if user.is_authenticated %}
-            
-            <li class="nav-item">
-              <a class="nav-link" href="booking">Welcome, {{user.username}}</a>
-            </li>
-            <li class="nav-item">
-                <a href="{% url 'booking' %}">Book Here</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="logout">Logout</a>
-            </li>
 
-            {% else %}
-      
-
-            <li class="nav-item">
-                <a href="register">Register Here</a>
-            </li>
-            <li class="nav-item">
-                <a href="login">Login Here</a>
-            </li>
-            {% endif %}
     </footer>
 </body>
 </html>

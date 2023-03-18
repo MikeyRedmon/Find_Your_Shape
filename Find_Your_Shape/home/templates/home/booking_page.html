@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <h1>
+        <h1 class="main">
             Book Your Classes and Assessments here!
         </h1>
         <nav>
@@ -42,16 +42,18 @@
         </nav>
     </header>
     <section>
-    <h2>
+    <h2 class="secondhead">
         Check out our HIIT Class Schedule
     </h2>
-    <table class="mainparagraph">
-            {% for item in hiitclasses %}
+    <div>
+    <table class="mainparagraph" class='tablemain'>
+                {% for item in hiitclasses %}
                 <tr>
                     <td>{{ item.name }}</td>
                     <td>{{ item.focus }}</td>
                     <td>{{ item.time }}</td>
-                </tr>
+                
+                {% if user == FYSManager %}
                 <td>
                     <a href="/editinghiit/{{ item.id }}">
                         <button class="btneddel">
@@ -66,53 +68,64 @@
                         </button>
                     </a>
                 </td>
+                {% endif %}
+                </tr>
             {% endfor %}
     </table>
-    <h5>
-    <a href="{% url 'hiitclasses' %}">Add a class</a>
+    </div>
+    {% if user == FYSManager %}
+    <h5 class="bookingLink">
+        <a href="{% url 'spinclasses' %}">Book your slot!</a>
     </h5>
+    {% endif %}
     <section>
-    <h2>
+    <h2 class="secondhead">
         Here are our Spin Classes
     </h2>
-    <table>
+    <table class="mainparagraph">
         {% for item in SpinClass %}
             <tr>
                 <td>{{ item.name }}</td>
                 <td>{{ item.genre }}</td>
                 <td>{{ item.time }}</td>
+            
+            <td>
+                {% if user == FYSManager %}
+                <td>
+                    <a href="/editinghiit/{{ item.id }}">
+                        <button class="btneddel">
+                            Edit
+                        </button>
+                    </a>
+                </td>
+                <td>
+                    <a href="/deletinghiit/{{ item.id }}">
+                        <button class="btneddel">
+                            Delete
+                        </button>
+                    </a>
+                </td>
+                {% endif %}
             </tr>
-            <td>
-                <a href="/editingspin/{{ item.id }}">
-                    <button class="btneddel">
-                        Edit
-                    </button>
-                </a>
-            </td>
-            <td>
-                <a href="/deletingspin/{{ item.id }}">
-                    <button class="btneddel">
-                        Delete
-                    </button>
-                </a>
-            </td>
         {% endfor %}
     </table>
-    <h5>
+    {% if user == FYSManager %}
+    <h5 class="bookingLink">
         <a href="{% url 'spinclasses' %}">Book your slot!</a>
     </h5>
+    {% endif %}
     </section>
     <section>
-    <h2>
+    <h2 class="secondhead">
         Book an Assessment
     </h2>
-    <table>
+    <table class="mainparagraph">
         {% for item in hittclass %}
             <tr>
                 <td>{{ item.name }}</td>
                 <td>{{ item.trainer }}</td>
                 <td>{{ item.focus }}</td>
-            </tr>
+            
             <td>
                 <a href="/editing/{{ item.id }}">
                     <button class="btneddel">
@@ -127,24 +140,25 @@
                     </button>
                 </a>
             </td>
+            </tr>
         {% endfor %}
     </table>
-    <h5>
+    <h5 class="bookingLink">
         <a href="{% url 'bookingin' %}">Book your slot!</a>
     </h5>
     </section>
     <section>
-        <h2>
+        <h2 class="secondhead">
             Book A Personal Training Session
         </h2>
-        <table>
+        <table class="mainparagraph">
             {% for item in ptClass %}
                 <tr>
                     <td>{{ item.name }}</td>
                     <td>{{ item.trainer }}</td>
                     <td>{{ item.focus }}</td>
                     <td>{{ item.time }}</td>
-                </tr>
+                
                 <td>
                     <a href="/editingpt/{{ item.id }}">
                         <button class="btneddel">
@@ -159,39 +173,12 @@
                         </button>
                     </a>
                 </td>
+                </tr>
             {% endfor %}
         </table>
-        <h5>
+        <h5 class="bookingLink">
             <a href="{% url 'bookinginSes' %}">Book your slot!</a>
         </h5>
         </section>
 <footer>
-    <nav>
-        <ul class="navbar-nav mr-auto list-inline">
-            {% if user.is_authenticated %}
-            
-            <li class="nav-item">
-              <a class="nav-link" href="booking">Welcome, {{user.username}}</a>
-            </li>
-            <li class="nav-item">
-                <a href="{% url 'booking' %}">Book Here</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="logout">Logout</a>
-            </li>
-
-            {% else %}
-      
-            <li class="nav-item">
-                <a href="{% url 'booking' %}">Book Here</a>
-            </li>
-            <li class="nav-item">
-                <a href="register">Register Here</a>
-            </li>
-            <li class="nav-item">
-                <a href="login">Login Here</a>
-            </li>
-            {% endif %}
-    </nav>
-
 </footer>

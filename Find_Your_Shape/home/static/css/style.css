@@ -17,6 +17,12 @@
     font-family: 'Oswald', sans-serif;
 }
 
+.bookingLink{
+    text-transform: none;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+}
+
 .mainparagraph{
     font-family: 'Raleway', sans-serif;
 }
@@ -28,6 +34,12 @@
     text-align: right;
 }
 
+/* Table specific styling */
+
+.tablemain {
+    width: 100%;
+
+}
 
 /* Element Specific Styling */
 
