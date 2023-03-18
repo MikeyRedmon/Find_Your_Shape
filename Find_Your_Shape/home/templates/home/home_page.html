@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,80 +7,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Your Shape</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
 </head>
 <body>
     <header>
-    <h1 >Find Your Shape</h1>
+    <h1 class="main">Find Your Shape</h1>
     <nav>
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto list-inline">
             {% if user.is_authenticated %}
             
             <li class="nav-item">
-              <a class="nav-link" href="logout">Logout</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="booking">Welcome, {{user.username}}</a>
             </li>
-      
+            <li class="nav-item">
+                <a href="{% url 'booking' %}">Book Here</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout">Logout</a>
+            </li>
+
             {% else %}
       
-            <li>
-                <a href="{% url 'booking' %}">Book Here!</a>
+            <li class="nav-item">
+                <a href="{% url 'booking' %}">Book Here</a>
             </li>
-            <li>
+            <li class="nav-item">
                 <a href="register">Register Here</a>
             </li>
-            <li>
+            <li class="nav-item">
                 <a href="login">Login Here</a>
             </li>
             {% endif %}
     </nav>
     </div>    
     </header>
-    <section>
-        <h2>Welcome to Find Your Shape!</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
 
-        <h3>What is Find Your Shape?</h3>
+                    <h2>Welcome to Find Your Shape!</h2>
 
-        <p>
-            Find Your Shape is a Private, Personable and Professional Gym with the Experiance, Expertise and Excellence required to help you reach your goals.  
-        </p>
+                    <h3>What is Find Your Shape?</h3>
 
+                    <p>
+                    Find Your Shape is a Private, Personable and Professional Gym with the Experiance, Expertise and Excellence required to help you reach your goals.  
+                    </p>
 
-        <h3>Our Mission Goals</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                
+                    <h3>Our Mission Goals</h3>
 
-        <p>
-            We don't want you to stop coming after the first week. We want you to know that everyones fitness journey, life and body are different and everyone
-            needs different motivation. We pride ourselves in being your 
-        </p>
-
-        
-
-    </section>
+                    <p>
+                        We don't want you to stop coming after the first week. We want you to know that everyones fitness journey, life and body are different and everyone
+                        needs different motivation. We pride ourselves in being your 
+                    </p>
+                </div>
+            </div>
     <footer>
-        <nav>
+        <ul class="navbar-nav mr-auto list-inline">
             {% if user.is_authenticated %}
             
-            <li>
-              <a class="nav-link" href="logout">Logout</a>
-            </li>
-            <li>
+            <li class="nav-item">
               <a class="nav-link" href="booking">Welcome, {{user.username}}</a>
             </li>
-      
+            <li class="nav-item">
+                <a href="{% url 'booking' %}">Book Here</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout">Logout</a>
+            </li>
+
             {% else %}
       
-            <li>
-                <a href="{% url 'booking' %}">Book Here!</a>
+            <li class="nav-item">
+                <a href="{% url 'booking' %}">Book Here</a>
             </li>
-            <li>
+            <li class="nav-item">
                 <a href="register">Register Here</a>
             </li>
-            <li>
+            <li class="nav-item">
                 <a href="login">Login Here</a>
             </li>
             {% endif %}
-        </nav>
     </footer>
 </body>
 </html>
