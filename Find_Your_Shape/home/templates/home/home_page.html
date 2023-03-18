@@ -13,7 +13,7 @@
     <header>
     <h1 class="main">Find Your Shape</h1>
     <nav>
-        <ul class="navbar-nav mr-auto list-inline">
+        <ul class="navbar-nav mr-auto list-inline navfont">
             {% if user.is_authenticated %}
             
             <li class="nav-item">
@@ -41,15 +41,14 @@
     </nav>
     </div>    
     </header>
+    <h2 class="secondhead">Welcome to Find Your Shape!</h2>
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
 
-                    <h2>Welcome to Find Your Shape!</h2>
+                    <h3 class="thirdhead">What is Find Your Shape?</h3>
 
-                    <h3>What is Find Your Shape?</h3>
-
-                    <p>
+                    <p class="mainparagraph">
                     Find Your Shape is a Private, Personable and Professional Gym with the Experiance, Expertise and Excellence required to help you reach your goals.  
                     </p>
 
@@ -58,9 +57,9 @@
             <div class="row">
                 <div class="col-md-6">
                 
-                    <h3>Our Mission Goals</h3>
+                    <h3 class="thirdhead">Our Mission Goals</h3>
 
-                    <p>
+                    <p class="mainparagraph">
                         We don't want you to stop coming after the first week. We want you to know that everyones fitness journey, life and body are different and everyone
                         needs different motivation. We pride ourselves in being your 
                     </p>
@@ -82,9 +81,7 @@
 
             {% else %}
       
-            <li class="nav-item">
-                <a href="{% url 'booking' %}">Book Here</a>
-            </li>
+
             <li class="nav-item">
                 <a href="register">Register Here</a>
             </li>

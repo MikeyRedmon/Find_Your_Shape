@@ -19,7 +19,7 @@
         <form method="POST">
           {% csrf_token %}
           {{ login_form.as_p }}
-          <button type="submit" onclick="alert('Thank you for logging in')">Login</button>
+          <button class="btnprime" type="submit" onclick="alert('Thank you for logging in')">Login</button>
         </form>
         <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
       </div>

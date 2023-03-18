@@ -9,20 +9,20 @@
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
 </head>
 <header>
-    <h1>
+    <h1 class="main">
         We Hope You Choose us to help you on your fitness journey
     </h1>
 </header>
 <body>
     <div>
-        <h2>Register</h2>
+        <h2 class="secondhead">Register</h2>
         <form method="POST">
             {% csrf_token %}
             {{ register_form.as_p}}
-            <button type="submit" onclick="alert('Thank You for signing up, lets find your shape!')">Register</button>
+            <button class="btnprime" type="submit" onclick="alert('Thank You for signing up, lets find your shape!')">Register</button>
         </form>
-        <p>
-            If you already have an account, <a href="login_request">login</a> instead.
+        <p class="mainparagraph">
+            If you already have an account, <a href="login">login</a> instead.
         </p>
 </body>
 </html>

@@ -14,7 +14,7 @@
             Book Your Classes and Assessments here!
         </h1>
         <nav>
-            <ul class="navbar-nav mr-auto list-inline">
+            <ul class="navbar-nav mr-auto list-inline navfont">
                 {% if user.is_authenticated %}
                 
                 <li class="nav-item">
@@ -45,7 +45,7 @@
     <h2>
         Check out our HIIT Class Schedule
     </h2>
-    <table>
+    <table class="mainparagraph">
             {% for item in hiitclasses %}
                 <tr>
                     <td>{{ item.name }}</td>
@@ -54,14 +54,14 @@
                 </tr>
                 <td>
                     <a href="/editinghiit/{{ item.id }}">
-                        <button>
+                        <button class="btneddel">
                             Edit
                         </button>
                     </a>
                 </td>
                 <td>
                     <a href="/deletinghiit/{{ item.id }}">
-                        <button>
+                        <button class="btneddel">
                             Delete
                         </button>
                     </a>
@@ -84,14 +84,14 @@
             </tr>
             <td>
                 <a href="/editingspin/{{ item.id }}">
-                    <button>
+                    <button class="btneddel">
                         Edit
                     </button>
                 </a>
             </td>
             <td>
                 <a href="/deletingspin/{{ item.id }}">
-                    <button>
+                    <button class="btneddel">
                         Delete
                     </button>
                 </a>
@@ -115,14 +115,14 @@
             </tr>
             <td>
                 <a href="/editing/{{ item.id }}">
-                    <button>
+                    <button class="btneddel">
                         Edit
                     </button>
                 </a>
             </td>
             <td>
                 <a href="/deleting/{{ item.id }}">
-                    <button>
+                    <button class="btneddel">
                         Delete 
                     </button>
                 </a>
@@ -147,14 +147,14 @@
                 </tr>
                 <td>
                     <a href="/editingpt/{{ item.id }}">
-                        <button>
+                        <button class="btneddel">
                             Edit
                         </button>
                     </a>
                 </td>
                 <td>
                     <a href="/deletingpt/{{ item.id }}">
-                        <button>
+                        <button class="btneddel">
                             Delete
                         </button>
                     </a>
