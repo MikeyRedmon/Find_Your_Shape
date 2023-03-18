@@ -53,7 +53,7 @@
                     <td>{{ item.focus }}</td>
                     <td>{{ item.time }}</td>
                 
-                {% if user == FYSManager %}
+                
                 <td>
                     <a href="/editinghiit/{{ item.id }}">
                         <button class="btneddel">
@@ -68,16 +68,15 @@
                         </button>
                     </a>
                 </td>
-                {% endif %}
                 </tr>
             {% endfor %}
     </table>
     </div>
-    {% if user == FYSManager %}
+    
     <h5 class="bookingLink">
         <a href="{% url 'spinclasses' %}">Book your slot!</a>
     </h5>
-    {% endif %}
+    
     <section>
     <h2 class="secondhead">
         Here are our Spin Classes
@@ -90,7 +89,7 @@
                 <td>{{ item.time }}</td>
             
             <td>
-                {% if user == FYSManager %}
+                
                 <td>
                     <a href="/editinghiit/{{ item.id }}">
                         <button class="btneddel">
@@ -105,15 +104,15 @@
                         </button>
                     </a>
                 </td>
-                {% endif %}
+                
             </tr>
         {% endfor %}
     </table>
-    {% if user == FYSManager %}
+    
     <h5 class="bookingLink">
         <a href="{% url 'spinclasses' %}">Book your slot!</a>
     </h5>
-    {% endif %}
+  
     </section>
     <section>
     <h2 class="secondhead">
