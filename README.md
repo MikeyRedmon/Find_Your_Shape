@@ -1,108 +1,134 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Find Your Shape - The Fitness Class System
 
-Welcome MikeyRedmon,
+## Introduction
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Welcome to the fourth project; the FSD project.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+I have decided to create an app that would be used by a Gym and its members to Create, Read, Update and Edit Assessments and Personal Training sessions, while also allowing
+the management of the gym to Create, Read and Update classes ran by the gym on a daily basis. 
 
-## Gitpod Reminders
+A Live website can be found here:
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+# Table of Contents
 
-`python3 -m http.server`
+- [1. UX](#ux)
+    - [1.1 Strategy](#strategy)
+        - [Project Goals](#project-goals)
+        - [User Goals](#user-goals)
+        - [User Expectations](#user-expectations)
+    - [1.2 Structure](#12-structure)
+    - [1.3 Skeleton](#13-skeleton)
+    - [1.4 Surface](#14-surface)
+- [2. Features](#features)
+- [3. Technology Used](#technology-used)
+- [4. Testing](#testing)
+- [5. Development Cycle](#development-cycle)
+- [6. Deployment](#deployment)
+- [7. End Project](#end-project)
+- [8. Known Bugs](#bugs)
+- [9. Credits](#credits)
 
-A blue button should appear to click: _Make Public_,
+<a name='ux'></a>
 
-Another blue button should appear to click: _Open Browser_.
+# 1 UX
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+[Go To Top](#table-of-contents)
 
-A blue button should appear to click: _Make Public_,
+As someone who goes to the gym five to six times a week, I do sometimes find myself wishing I knew when the staff might be avalible to answer a question or help out with 
+a personal best. 
 
-Another blue button should appear to click: _Open Browser_.
+Sometimes I want to be able to set up an appointment with my trainer without having to drive to the gym, or call them and get nothing done. 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+This project will showcase simplicity and ease of function when it comes to creating an appointment, updating an appointment, canceling an appointment and allowing Management to do the same. 
 
-To log into the Heroku toolbelt CLI:
+## 1.1 Strategy
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+[Go to Top](#table-of-contents)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Project Goals
 
-------
+The main goal of this project is to allow the user to sign up, sign in/out and then Create, Read, Update and Delete their appointments. 
 
-## Release History
+### User Goals:
+First Time User Goals:
+- As a First time User I want to be able to understand the sign up instructions
+- as a First time User I want to be able to simply and easily navigate the app.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+Regular User Goals: 
+- As a Regular User I want to be able to edit my appointments to suit my schedule.
+- As a Regular User I want to be able to cancel an appointment I've made
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+### User Expectations
+The App should have a siomple user interface, with navigation to each section clear and concise
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- The Log in menu is clear and simple with good User Feedback
+- Creating, editing, deleting an item should return feedback to the user to confirm actions
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## 1.2 Structure
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+[Go To Top](#table-of-contents)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+It is important in all aspects of modern web design that you provide a responsive and sleek look to an application in order to make it as user friendly as possible.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- Responsive on all device sizes
+- Easy Navigation
+- Footer at the bottom with social media websites
+- All elements will be consistant with font size, font family and colour scheme. 
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+<a name='skeleton'></a>
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## 1.3 Skeleton
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+Database Structure: 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+```python
+class hiitbook(models.Model):
+    name = models.CharField(max_length=10, null=False, blank=False)
+    focus = models.CharField(max_length=50, null=False, blank=False)
+    time = models.DateTimeField(max_length=10)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+    def __str__(self):
+        return self.name
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+class SpinClasses(models.Model):
+    name = models.CharField(max_length=10, null=False, blank=False)
+    genre = models.CharField(max_length=10, null=False, blank=False)
+    time = models.DateTimeField(max_length=10)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+    def __str__(self):
+        return self.name
 
-------
 
-## FAQ about the uptime script
+class hittclasses(models.Model):
+    name = models.CharField(max_length=10, null=False, blank=False)
+    trainer = models.CharField(max_length=10, null=False, blank=False)
+    focus = models.CharField(max_length=50, null=False, blank=False)
 
-**Why have you added this script?**
+    def __str__(self):
+        return self.name
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
 
-**How will this affect me?**
+class PtClasses(models.Model):
+    name = models.CharField(max_length=10, null=False, blank=False)
+    trainer = models.CharField(max_length=10, null=False, blank=False)
+    focus = models.CharField(max_length=50, null=False, blank=False)
+    time = models.DateTimeField(null=False, blank=False)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
+    def __str__(self):
+        return self.name
 ```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
 
-**Anything more?**
+<a name='surface'></a>
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+## 1.4 Surface
 
----
+### Colours
 
-Happy coding!
+Please find the colours I used [here](https://coolors.co/000000-ffd700-e7e4e4-7b3f00-0000ff)
+
+### Typography
+
+I went with two seperate fonts; Oswald for Headings with Raleway used for everything else. 
+
+You can find [Oswald](https://fonts.google.com/specimen/Oswald) And [Raleway](https://fonts.google.com/specimen/Raleway) at these links
