@@ -173,3 +173,75 @@ footer, ul {
 body{
   background-color: darkgoldenrod;
 }
+
+/* Reactive code */
+@media screen and (max-width:700px ) {
+
+  .main{
+    text-align: center;
+}
+
+.secondhead{
+  text-align: center;
+}
+
+.thirdhead{
+  text-align: center;
+}
+
+.bookingLink{
+    text-transform: none;
+    text-decoration: none;
+    text-align: center;
+    
+}
+
+.mainparagraph{
+  text-align: center;
+}
+
+/* Styling for navigation items */
+
+.navfont{
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    text-align: center;
+}
+
+.nav-link{
+  color:whitesmoke;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.nav-link:hover {
+  color: chocolate;
+}
+
+/* Table specific styling */
+
+.tablemain {
+    width: 100%;
+    text-align: center;
+    display: inline-table;
+}
+
+/* Element Specific Styling */
+
+#list-inline, li {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    display: inline;
+    
+}
+
+footer, ul {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    text-transform: none;
+    text-decoration: none;
+}
+
+
+
+}
