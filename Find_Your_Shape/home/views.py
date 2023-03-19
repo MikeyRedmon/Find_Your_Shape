@@ -145,6 +145,22 @@ def editing(request, item_id):
     return render(request, 'home/editing.html', context)
 
 
+def editingspin(request, item_id):
+    item = get_object_or_404(SpinClasses, id=item_id)
+    form = SpinForm(instance=item)
+    context = {
+        'form': form
+    }
+
+    if request.method == 'POST':
+        form = SpinForm(request.POST, instance=item)
+        if form.is_valid():
+            form.save()
+            return redirect("booking")
+
+    return render(request, 'home/editing.html', context)
+
+
 def editingpt(request, item_id):
     item = get_object_or_404(PtClasses, id=item_id)
     Book = BookingPT(instance=item)
