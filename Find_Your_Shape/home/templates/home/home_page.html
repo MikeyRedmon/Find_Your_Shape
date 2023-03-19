@@ -10,17 +10,18 @@
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
 </head>
 <body>
+    <img src="{% static 'images/background.jpg' %}" alt="A black and gold vector design background image" id="bgimage">
     <header>
     <h1 class="main">Find Your Shape</h1>
     <nav>
-        <ul class="navbar-nav mr-auto list-inline navfont">
+        <ul class="list-inline navfont">
             {% if user.is_authenticated %}
             
             <li class="nav-item">
               <a class="nav-link" href="booking">Welcome, {{user.username}}</a>
             </li>
             <li class="nav-item">
-                <a href="{% url 'booking' %}">Book Here</a>
+                <a class="nav-link" href="{% url 'booking' %}">Book Here</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="logout">Logout</a>
@@ -29,13 +30,13 @@
             {% else %}
       
             <li class="nav-item">
-                <a href="{% url 'booking' %}">Book Here</a>
+                <a class="nav-link" href="{% url 'booking' %}">Book Here</a>
             </li>
             <li class="nav-item">
-                <a href="register">Register Here</a>
+                <a class="nav-link" href="register">Register Here</a>
             </li>
             <li class="nav-item">
-                <a href="login">Login Here</a>
+                <a class="nav-link" href="login">Login Here</a>
             </li>
             {% endif %}
     </nav>

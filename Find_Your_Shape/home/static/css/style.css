@@ -7,31 +7,47 @@
 
 .main{
     font-family: 'Oswald', sans-serif;
+    color: whitesmoke;
 }
 
 .secondhead{
     font-family: 'Oswald', sans-serif;
+    color: whitesmoke;
 }
 
 .thirdhead{
     font-family: 'Oswald', sans-serif;
+    color: whitesmoke;
 }
 
 .bookingLink{
     text-transform: none;
     text-decoration: none;
     font-family: 'Oswald', sans-serif;
+    
 }
 
 .mainparagraph{
     font-family: 'Raleway', sans-serif;
+    color: white;
 }
+
+/* Styling for navigation items */
 
 .navfont{
     font-family: 'Raleway', sans-serif;
-    text-transform: none;
     text-decoration: none;
     text-align: right;
+}
+
+.nav-link{
+  color:whitesmoke;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.nav-link:hover {
+  color: chocolate;
 }
 
 /* Table specific styling */
@@ -47,7 +63,7 @@
     font-family: 'Raleway', sans-serif;
     text-align: right;
     display: inline;
-    text-decoration: none;
+    
 }
 
 footer, ul {
@@ -142,8 +158,18 @@ footer, ul {
   fill: #06f;
 }
 
-@media (min-width: 768px) {
-  .btneddel {
-    min-width: 170px;
-  }
+
+/* Background and Image styling */
+
+#bgimage {
+  position: fixed;
+  border: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+}
+
+body{
+  background-color: darkgoldenrod;
 }
