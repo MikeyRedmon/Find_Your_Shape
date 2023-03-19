@@ -8,6 +8,27 @@
 </head>
 <img src="{% static 'images/background.jpg' %}" alt="A black and gold vector design background image" id="bgimage">
 <body>
-    
+<header>
+    <h1 class="main">
+        Add a New Spin Class
+    </h1>
+    <li>
+        <a class="nav-link" href="{% url 'booking' %}">Home</a>
+    </li>
+</header>
+<body>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <p>
+            <button class="btnprime" type="submit" onclick="alert('New Class Added')">Add the new class</button>
+            </p>
+        </div>
+    </form>
+
+</body>
+</html>
 </body>
 </html>
