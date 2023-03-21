@@ -132,3 +132,184 @@ Please find the colours I used [here](https://coolors.co/000000-ffd700-e7e4e4-7b
 I went with two seperate fonts; Oswald for Headings with Raleway used for everything else. 
 
 You can find [Oswald](https://fonts.google.com/specimen/Oswald) And [Raleway](https://fonts.google.com/specimen/Raleway) at these links
+
+<a name='features'></a>
+
+# 2. Features
+
+[Go To Top](#table-of-contents)
+
+### All Pages
+- The nav bar is placed at the top of the two major pages, and is dynamic. Meaning that the options will change depending on if the user is logged in
+- The nav bar looks like this when the user is not logged in:
+
+![User Not Logged in](./Find_Your_Shape/Find_Your_Shape/images/NavNotLog.PNG)
+
+- The nav bar looks like this when the user is logged in:
+
+![User Logged in](/Find_Your_Shape/Find_Your_Shape/images/NavLogged.png)
+
+- A modern, sleek background image to provide a unique image and pleasent user experiance. 
+
+### Register Page
+
+- Simple Sign up form
+- A message will prompt the user if they've signed up correctly. 
+- Once the user is successfully signed up, they will automatically be logged in and directed to the booking page.
+
+### Log In Page
+
+- A log in form that requires the username and password of a user
+- A message prompt will confirm the log in. 
+
+### Landing Page
+
+- A welcoming page that introduces Find Your Shape, tells the user what the gyms goals are 
+- The Nav bar requires the user to log in or register to be able to availe of the apps services
+
+### Booking page
+
+- A list of classes that the user can attend
+- An option to book a Personal Training session, with a form and messages to confirm the booking
+- An option to book an assessment, with a form and messages to confirm the booking
+
+### Editing Page
+
+- Pre populating fields that allow for ease of editing
+- Applies to all classes and appointments
+
+### Delete Function
+
+- A Model pops on screen to confirm the deletion. 
+
+<a name='technology-used'></a>
+
+## 3. Technologies Used
+
+[Go To Top](#table-of-contents)
+
+-   [HTML5](https://en.wikipedia.org/wiki/HTML)
+    -   The project uses HyperText Markup Language.
+-   [CSS3](https://en.wikipedia.org/wiki/CSS)
+    -   The project uses Cascading Style Sheets.
+-   [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+    -   The project uses Python.
+-   [Boostrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+    -   The project uses Bootstrap 5.
+-   [PostgreSQL](https://www.postgresql.org/)
+    -   The project uses PostgreSQL as a database.
+-   [Gitpod](https://www.gitpod.io/)
+    -   The project uses Gitpod.
+-   [Chrome](https://www.google.com/intl/en_uk/chrome/)
+    -   The project uses Chrome to debug and test the source code using HTML5.
+-   [Balsamiq](https://balsamiq.com/)
+    -   Balsamiq was used to create the wireframes during the design process.
+-   [Google Fonts](https://fonts.google.com/)
+    -   Google fonts were used to import the "Be Vietnam Pro" font into the style.css file which is used on all pages throughout the project.
+-   [GitHub](https://github.com/)
+    -   GitHub was used to store the project's code after being pushed from Git.
+
+<a name="testing"></a>
+
+# 4. Testing
+
+[Go to Top](#table-of-contents)
+
+### Google Developer Tools
+For every element that I added to my HTML, I would add the basic CSS to my stylesheet. I would then use the inspect element to try different styles. Once I've got it to my liking I would try to see if I can implement the styling with bootstrap, if I could not replicate the styling I would copy the CSS from google and paste it into my CSS stylesheet. This allows me to keep track of the code I am using.
+
+I also checked the accessibility of the page using lighthouse.
+
+### Responsive Tools
+
+I used [Am I Responsive](http://ami.responsivedesign.is) to make sure that all my pages are responsive to all devices
+
+## Manual Testing
+I have tested my site on Safari and google chrome on multiple devices.
+
+These include:
+-   iPhone X
+-   iPhone XS Max
+-   iPad Pro
+-   Lenovo Legion
+-   Samsung Galaxy S8+ 
+
+# 5. Development Cycle
+
+[Go to the top](#table-of-contents)
+
+## Project Checklist
+- Install Django and the supporting libraries
+    -  Install Django and Gunicorn. Gunicorn is the server I am using to run Django on Heroku.
+    - Install support libraries including psycopg2, this is used to connect the PostgreSQL database
+    - Install Cloudinary libraries, this is a host provider service that stores images
+    - Create the requirements.txt file. This includes the project's dependencies allowing us to run the project in Heroku.
+
+- Create a new, blank Django Project
+    - Create a new project
+    - Create the app
+    - Add home to the installed apps in settings.py
+    - Migrate all new changes to the database
+    - Run the server to test
+
+- Setup project to use Cloudinary and PostgreSQL
+    - Create new Heroku app
+        - Sign into Heroku
+        - Select New
+        - Select create new app
+        - Enter a relevant app name
+        - Select appropriate region
+        - Select the create app button
+
+    - Attach PostgreSQL database
+        - In Heroku go to resources
+        - Search for Postgres in the add-ons box
+        - Select Heroku Postgres
+        - Submit order form
+
+    - Prepare the environment and settings.py file
+        - Create env.py file
+        - Add DATABASE_URL with the Postgres URL from Heroku
+        - Add SECRET_KEY with a randomly generated key
+        - Add SECRET_KEY and generated key to the config vars in Heroku
+        - Add if statement to settings.py to prevent the production server from erroring
+        - Replace insecure key with the environment variable for the SECRET_KEY
+        - Add Heroku database as the back end
+        - Migrate changes to new database
+
+    - Get static media files stored on Cloudinary
+        - Create a Cloudinary account
+        - From the dashboard, copy the API Environment variable
+        - In the settings.py file create a new environment variable for CLOUDINARY_URL
+        - Add the CLOUDINARY_URL variable to Heroku
+        - Add a temporary config var for DISABLE_COLLECTSTATIC
+        - In settings.py add Cloudinary as an installed app
+        - Add static and media file variables
+        - Add templates directory
+        - Change DIR's key to point to TEMPALTES_DIR
+        - Add Heroku hostname to allowed hosts
+        - Create directories for media, static and templates in the project workspace
+        - Create a Procfile
+
+- Deploy new empty project to Heroku
+
+<a name="deployment"></a>
+
+# 6. Deployment
+
+[Go to the top](#table-of-contents)
+
+I used the terminal to deploy my project locally. To do this I had to:
+1. Create a repository on GitHub.
+2. Clone the repository on your chosen source code editor (GitPod in my case) using the clone link.
+3. Open the terminal within GitPod
+4. Enter "python3 manage.py runserver into the terminal.
+5. Go to local host address on my web browser.
+6. All locally saved changes will show up here.
+
+For the final deployment to Heroku, I had to:
+1. Uncomment the PostgreSQL databse from my settings.py file.
+2. Set debug = False in my settings.py file.
+3. Commit and push all files to GitHub
+3. In Heroku, remove the DISABLE_COLLECTSTATIC config var.
+4. In the deploy tab, go to the manual deploy sections and click deploy branch.
