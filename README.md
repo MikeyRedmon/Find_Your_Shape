@@ -234,6 +234,63 @@ These include:
 -   Lenovo Legion
 -   Samsung Galaxy S8+ 
 
+Please find below my testing process for all pages via mobile and web:
+
+### Navigation Bar
+
+All Pages:
+TEST            | OUTCOME                          | PASS / FAIL  
+--------------- | -------------------------------- | ---------------
+Home page | When clicking on the "Home" button on the nav bar, the browser redirects to the home page. | PASS
+Booking Page | When clicking on the booking button on the nav bar, the browswer redirects to the booking page | PASS
+Edit Pages | When Clicking on the edit button for any class or assessment, the browswer redirects to the correct editing page | PASS
+Loging/ Log Out Pages | When clicking on the log in or log out button the page redirects to the log in page or logs the user out | PASS
+Register Page | When clicking on the register button it redirects to the register page. | PASS
+Foreground and background | Checked foreground and background information is clearly legible | PASS
+Text | Checked the text is clearly legible against the background | PASS
+
+### Home Page
+TEST            | OUTCOME                          | PASS / FAIL  
+--------------- | -------------------------------- | ---------------
+Responsiveness | Checked elements for consistant scaleability | PASS
+Accessibility | Checked the accessibility of the page using lighthouse | PASS
+
+### Booking page
+TEST            | OUTCOME                          | PASS / FAIL  
+--------------- | -------------------------------- | ---------------
+Responsiveness | Checked elements for consistant scaleability | PASS
+Book now button | When clicking the book now button on the page, the browser redirects to the booking page. | PASS
+Booking Form | Checked the form submits only when all required fields are filled out. | PASS
+Accessibility | Checked the accessibility of the page using lighthouse| PASS
+
+### Edit booking page
+TEST            | OUTCOME                          | PASS / FAIL  
+--------------- | -------------------------------- | ---------------
+Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
+Responsiveness | Check every element on-page for consistent scalability in mobile, tablet and desktop view.| PASS
+Accessibility | Checked the accessibility of the page using lighthouse| PASS
+Edit Booking Form | Checked the form submits only when all required fields are filled out. | PASS
+Form validation | Checked that the telephone number input only allows number input and not any text | PASS
+
+### Register page
+TEST            | OUTCOME                          | PASS / FAIL  
+--------------- | -------------------------------- | ---------------
+Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
+Responsiveness | Check every element on-page for consistent scalability in mobile, tablet and desktop view.| PASS
+Accessibility | Checked the accessibility of the page using lighthouse| PASS
+Register form | Checked the form submits only when all required fields are filled out. | PASS
+Sign in link | Checked the sign-in link redirects to the sign-in page. | PASS
+
+### Sign in Page
+
+TEST            | OUTCOME                          | PASS / FAIL  
+--------------- | -------------------------------- | ---------------
+Media | All media assets are displayed properly, have no pixelation or stretched images and is responsive on all devices. | PASS
+Responsiveness | Check every element on-page for consistent scalability in mobile, tablet and desktop view.| PASS
+Accessibility | Checked the accessibility of the page using lighthouse| PASS
+Sign in form | Checked the form submits only when all required fields are filled out. | PASS
+Signup link | Checked the signup link redirects to the signup page. | PASS
+
 # 5. Development Cycle
 
 [Go to the top](#table-of-contents)
@@ -313,3 +370,24 @@ For the final deployment to Heroku, I had to:
 3. Commit and push all files to GitHub
 3. In Heroku, remove the DISABLE_COLLECTSTATIC config var.
 4. In the deploy tab, go to the manual deploy sections and click deploy branch.
+
+<a name="known-bugs"></a>
+
+# 8. Known Bugs
+
+[Go to the top](#table-of-contents)
+
+# 9. Credits
+
+[Go to the top](#table-of-contents)
+
+### Code
+
+- The Navigation Bar came from [Bootstrap](https://getbootstrap.com/docs/5.0/components/navbar)
+
+### Content
+
+- The Background image came from [Vecteezy](https://www.vecteezy.com/vector-art/1849553-modern-gold-background)
+
+### Project Acknowledgements
+- My Mentor - For his constructive criticism and always pushing me to go further to develop my skills.
