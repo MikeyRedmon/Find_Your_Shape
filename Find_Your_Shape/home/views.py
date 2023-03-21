@@ -22,11 +22,13 @@ def login_request(request):
             if user is not None:
                 login(request, user)
                 messages.info(request, f"You are now logged in {username}")
-                return redirect("home")
+                return redirect("login")
             else:
                 messages.error(request, "Invalid Username or passward")
+                return redirect("login")
         else:
             messages.error(request, "Invalid Username or passward")
+            return redirect("login")
     form = AuthenticationForm()
     return render(request, "home/login.html", context={"login_form": form})
 
@@ -38,15 +40,17 @@ def logout_request(request):
 
 
 def register_request(request):
+    form = NewUserForm()
     if request.method == 'POST':
         form = NewUserForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
             messages.success(request, "Registration Successful")
-            return redirect("booking")
-        messages.error(request, "Registration Failed, Please Try again")
-    form = NewUserForm()
+            return redirect("register")
+        else:
+            messages.error(request, "Registration Failed, Please Try again")
+            return redirect("register")
     return render(request, "home/register.html",
                   context={"register_form": form})
 
