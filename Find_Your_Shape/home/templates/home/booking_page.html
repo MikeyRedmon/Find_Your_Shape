@@ -53,9 +53,8 @@
                     <td>{{ item.name }}</td>
                     <td>{{ item.focus }}</td>
                     <td>{{ item.time }}</td>
-                
-                
                 <td>
+                    {% if user.is_staff  %}
                     <a href="/editinghiit/{{ item.id }}">
                         <button class="btneddel">
                             Edit
@@ -68,14 +67,17 @@
                             Delete
                         </button>
                     </a>
+                    {% endif %}
                 </td>
                 </tr>
             {% endfor %}
     </table>
     </div>
+    {% if user.is_staff  %}
     <h5 class="bookingLink">
         <a class="nav-link" href="{% url 'spinclasses' %}">Book your slot!</a>
     </h5>
+    {% endif %}
     <section>
     <h2 class="secondhead">
         Here are our Spin Classes
@@ -88,7 +90,7 @@
                 <td>{{ item.time }}</td>
             
             <td>
-                
+                {% if user.is_staff  %}
                 <td>
                     <a href="/editingspin/{{ item.id }}">
                         <button class="btneddel">
@@ -103,12 +105,15 @@
                         </button>
                     </a>
                 </td>
+                {% endif %}
             </tr>
         {% endfor %}
     </table>
+    {% if user.is_staff  %}
     <h5 class="bookingLink">
         <a class="nav-link" href="{% url 'spinclasses' %}">Book your slot!</a>
     </h5>
+    {% endif %}
     </section>
     <section>
     <h2 class="secondhead">
