@@ -127,6 +127,7 @@
                 <td>{{ item.focus }}</td>
             
             <td>
+                
                 <a href="/editing/{{ item.id }}">
                     <button class="btneddel">
                         Edit
@@ -139,6 +140,7 @@
                         Delete 
                     </button>
                 </a>
+                
             </td>
             </tr>
         {% endfor %}
@@ -152,7 +154,9 @@
             Book A Personal Training Session
         </h2>
         <table class="mainparagraph">
+            
             {% for item in ptClass %}
+            
                 <tr>
                     <td>{{ item.name }}</td>
                     <td>{{ item.trainer }}</td>
@@ -160,6 +164,7 @@
                     <td>{{ item.time }}</td>
                 
                 <td>
+                    
                     <a href="/editingpt/{{ item.id }}">
                         <button class="btneddel">
                             Edit
@@ -175,6 +180,7 @@
                 </td>
                 </tr>
             {% endfor %}
+            
         </table>
         <h5 class="bookingLink">
             <a class="nav-link" href="{% url 'bookinginSes' %}">Book your slot!</a>

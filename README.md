@@ -19,14 +19,14 @@ A Live website can be found here:
     - [1.2 Structure](#12-structure)
     - [1.3 Skeleton](#13-skeleton)
     - [1.4 Surface](#14-surface)
-- [2. Features](#features)
-- [3. Technology Used](#technology-used)
-- [4. Testing](#testing)
-- [5. Development Cycle](#development-cycle)
-- [6. Deployment](#deployment)
-- [7. End Project](#end-project)
-- [8. Known Bugs](#bugs)
-- [9. Credits](#credits)
+- [2. Features](#2-featuresfeatures)
+- [3. Technology Used](#3-technologies-used)
+- [4. Testing](#4-testing)
+- [5. Development Cycle](#5-development-cycle)
+- [6. Deployment](#6-deployment)
+- [7. End Project](#7-end-project)
+- [8. Known Bugs](#8-bugs)
+- [9. Credits](#9-credits)
 
 <a name='ux'></a>
 
@@ -157,15 +157,21 @@ You can find [Oswald](https://fonts.google.com/specimen/Oswald) And [Raleway](ht
 - A message will prompt the user if they've signed up correctly. 
 - Once the user is successfully signed up, they will automatically be logged in and directed to the booking page.
 
+![Register Page](/Find_Your_Shape/Find_Your_Shape/images/Register.png)
+
 ### Log In Page
 
 - A log in form that requires the username and password of a user
 - A message prompt will confirm the log in. 
 
+![Log in page](/Find_Your_Shape/Find_Your_Shape/images/login.png)
+
 ### Landing Page
 
 - A welcoming page that introduces Find Your Shape, tells the user what the gyms goals are 
 - The Nav bar requires the user to log in or register to be able to availe of the apps services
+
+![Landing Page](/Find_Your_Shape/Find_Your_Shape/images/landingpage.png)
 
 ### Booking page
 
@@ -173,10 +179,18 @@ You can find [Oswald](https://fonts.google.com/specimen/Oswald) And [Raleway](ht
 - An option to book a Personal Training session, with a form and messages to confirm the booking
 - An option to book an assessment, with a form and messages to confirm the booking
 
+![Booking Page Manager](/Find_Your_Shape/Find_Your_Shape/images/bookingpage-manager.png)
+
+- Users can only edit bookings and assessments
+
+![Booking Page Manager](/Find_Your_Shape/Find_Your_Shape/images/bookingpage-user.png)
+
 ### Editing Page
 
 - Pre populating fields that allow for ease of editing
 - Applies to all classes and appointments
+
+![Editing Page](/Find_Your_Shape/Find_Your_Shape/images/editing.png)
 
 ### Delete Function
 
