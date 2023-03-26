@@ -19,7 +19,7 @@ A Live website can be found here:
     - [1.2 Structure](#12-structure)
     - [1.3 Skeleton](#13-skeleton)
     - [1.4 Surface](#14-surface)
-- [2. Features](#2-featuresfeatures)
+- [2. Features](#2-features)
 - [3. Technology Used](#3-technologies-used)
 - [4. Testing](#4-testing)
 - [5. Development Cycle](#5-development-cycle)
@@ -305,6 +305,23 @@ Responsiveness | Check every element on-page for consistent scalability in mobil
 Accessibility | Checked the accessibility of the page using lighthouse| PASS
 Sign in form | Checked the form submits only when all required fields are filled out. | PASS
 Signup link | Checked the signup link redirects to the signup page. | PASS
+
+### Validator Tools
+#### HTML
+
+Using Code Insitutes Heroku app ![Python linter](https://pep8ci.herokuapp.com/#) to check; No Errors are returned from the checker after running all HTML files through it. 
+
+#### CSS
+
+Using ![W3C CSS](https://jigsaw.w3.org/css-validator/validator) To check my Custom CSS elements, it passes with no errors.
+
+#### Python 
+
+Using Code Insitutes Heroku app ![Python linter](https://pep8ci.herokuapp.com/#) to check;
+
+- There are some Line Too Long errors in Settings.py, which I am not going to change.
+
+Other than that, all files come back clean. 
 
 # 5. Development Cycle
 
