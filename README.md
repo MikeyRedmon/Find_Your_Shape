@@ -143,11 +143,11 @@ You can find [Oswald](https://fonts.google.com/specimen/Oswald) And [Raleway](ht
 - The nav bar is placed at the top of the two major pages, and is dynamic. Meaning that the options will change depending on if the user is logged in
 - The nav bar looks like this when the user is not logged in:
 
-![User Not Logged in](./Find_Your_Shape/Find_Your_Shape/images/NavNotLog.PNG)
+![User Not Logged in](./Find_Your_Shape/Find_Your_Shape/images/navloggedin.png)
 
 - The nav bar looks like this when the user is logged in:
 
-![User Logged in](/Find_Your_Shape/Find_Your_Shape/images/NavLogged.png)
+![User Logged in](/Find_Your_Shape/Find_Your_Shape/images/navnotloggedin.PNG)
 
 - A modern, sleek background image to provide a unique image and pleasent user experiance. 
 
@@ -157,21 +157,21 @@ You can find [Oswald](https://fonts.google.com/specimen/Oswald) And [Raleway](ht
 - A message will prompt the user if they've signed up correctly. 
 - Once the user is successfully signed up, they will automatically be logged in and directed to the booking page.
 
-![Register Page](/Find_Your_Shape/Find_Your_Shape/images/Register.png)
+![Register Page](/Find_Your_Shape/Find_Your_Shape/images/register.png)
 
 ### Log In Page
 
 - A log in form that requires the username and password of a user
 - A message prompt will confirm the log in. 
 
-![Log in page](/Find_Your_Shape/Find_Your_Shape/images/login.png)
+![Log in page](/Find_Your_Shape/Find_Your_Shape/images/loginreq.png)
 
 ### Landing Page
 
 - A welcoming page that introduces Find Your Shape, tells the user what the gyms goals are 
 - The Nav bar requires the user to log in or register to be able to availe of the apps services
 
-![Landing Page](/Find_Your_Shape/Find_Your_Shape/images/landingpage.png)
+![Landing Page](/Find_Your_Shape/Find_Your_Shape/images/landing.png)
 
 ### Booking page
 
@@ -179,24 +179,26 @@ You can find [Oswald](https://fonts.google.com/specimen/Oswald) And [Raleway](ht
 - An option to book a Personal Training session, with a form and messages to confirm the booking
 - An option to book an assessment, with a form and messages to confirm the booking
 
-![Booking Page Manager](/Find_Your_Shape/Find_Your_Shape/images/bookingpage-manager.png)
+![Booking Page Manager](/Find_Your_Shape/Find_Your_Shape/images/bookingpagemanager.png)
 
 - Users can only edit bookings and assessments
 
-![Booking Page Manager](/Find_Your_Shape/Find_Your_Shape/images/bookingpage-user.png)
+![Booking Page Manager](/Find_Your_Shape/Find_Your_Shape/images/bookingpageuser.png)
 
 ### Editing Page
 
 - Pre populating fields that allow for ease of editing
 - Applies to all classes and appointments
 
-![Editing Page](/Find_Your_Shape/Find_Your_Shape/images/editing.png)
+![Editing Page](/Find_Your_Shape/Find_Your_Shape/images/edit.png)
 
 ### Delete Function
 
-- A Model pops on screen to confirm the deletion. 
+- Clicking the button deletes the item from the DB. 
 
 <a name='technology-used'></a>
+
+![Delete Button](/Find_Your_Shape/Find_Your_Shape/images/deletebutton.png)
 
 ## 3. Technologies Used
 
