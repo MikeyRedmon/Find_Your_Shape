@@ -81,6 +81,11 @@
 
 }
 
+.align-center{
+  margin: auto;
+  width: 50%;
+}
+
 /* Element Specific Styling */
 
 li {
@@ -224,6 +229,12 @@ body{
     text-align: center;
     
 }
+
+#bgimage {
+  width: 95%;
+  height: 100%;
+
+} 
 
 .mainparagraph{
   text-align: center;

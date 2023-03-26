@@ -50,7 +50,7 @@
         Check out our HIIT Class Schedule
     </h2>
     <div>
-    <table class="mainparagraph" class='tablemain'>
+    <table class="mainparagraph tablemain align-center">
                 {% for item in hiitclasses %}
                 <tr>
 
@@ -90,7 +90,7 @@
     <h2 class="secondhead">
         Here are our Spin Classes
     </h2>
-    <table class="mainparagraph">
+    <table class="mainparagraph tablemain align-center">
         {% for item in SpinClass %}
             <tr>
 
@@ -132,26 +132,26 @@
     <h2 class="secondhead">
         Book an Assessment
     </h2>
-    <table class="mainparagraph">
+    <table class="mainparagraph tablemain align-center">
         {% for item in hittclass %}
-            <tr>
+            <tr class="align-center">
 
-                <td>{{ item.name }}</td>
-                <td>{{ item.trainer }}</td>
-                <td>{{ item.focus }}</td>
+                <td class="align-center">{{ item.name }}</td>
+                <td class="align-center">{{ item.trainer }}</td>
+                <td class="align-center">{{ item.focus }}</td>
             
             <td>
                 
-                <a href="/editing/{{ item.id }}">
-                    <button class="btneddel">
+                <a href="/editing/{{ item.id }}" class="align-center">
+                    <button class="btneddel" class="align-center">
                         Edit
                     </button>
                 </a>
 
             </td>
-            <td>
+            <td class="align-center">
 
-                <a href="/deleting/{{ item.id }}">
+                <a href="/deleting/{{ item.id }}" class="align-center">
                     <button class="btneddel">
                         Delete 
                     </button>
@@ -170,15 +170,15 @@
         <h2 class="secondhead">
             Book A Personal Training Session
         </h2>
-        <table class="mainparagraph">
+        <table class="mainparagraph tablemain align-center">
             
             {% for item in ptClass %}
             
                 <tr>
-                    <td>{{ item.name }}</td>
-                    <td>{{ item.trainer }}</td>
-                    <td>{{ item.focus }}</td>
-                    <td>{{ item.time }}</td>
+                    <td class="align-center">{{ item.name }}</td>
+                    <td class="align-center">{{ item.trainer }}</td>
+                    <td class="align-center">{{ item.focus }}</td>
+                    <td class="align-center">{{ item.time }}</td>
                 
                 <td>
                     
