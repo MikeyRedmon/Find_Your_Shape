@@ -14,6 +14,7 @@
         <h1 class="main">
             Book Your Classes and Assessments here!
         </h1>
+        <!-- Nav Bar -->
         <nav>
             <ul class="navbar-nav mr-auto list-inline navfont">
                 {% if user.is_authenticated %}
@@ -43,6 +44,7 @@
         </nav>
     </header>
     <section>
+        <!-- Hiit Classes -->
     <h2 class="secondhead">
         Check out our HIIT Class Schedule
     </h2>
@@ -62,7 +64,7 @@
                     </a>
                 </td>
                 <td>
-                    <a href="/deletinghiit/{{ item.id }}">
+                    <a data-bs-toggle="modal" data-bs-target="#HiitModal">
                         <button class="btneddel">
                             Delete
                         </button>
@@ -79,6 +81,7 @@
     </h5>
     {% endif %}
     <section>
+        <!-- Spin Classes -->
     <h2 class="secondhead">
         Here are our Spin Classes
     </h2>
@@ -116,6 +119,7 @@
     {% endif %}
     </section>
     <section>
+        <!-- Assessments -->
     <h2 class="secondhead">
         Book an Assessment
     </h2>
@@ -150,6 +154,7 @@
     </h5>
     </section>
     <section>
+        <!-- PT Sessions -->
         <h2 class="secondhead">
             Book A Personal Training Session
         </h2>
@@ -186,5 +191,9 @@
             <a class="nav-link" href="{% url 'bookinginSes' %}">Book your slot!</a>
         </h5>
         </section>
+
+        <!-- Include Popup Models -->
+        
 <footer>
 </footer>
+

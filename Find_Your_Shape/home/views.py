@@ -5,11 +5,15 @@ from django.contrib import messages
 from .models import hiitbook, hittclasses, PtClasses, SpinClasses
 from .forms import BookingForm, BookingPT, NewUserForm, HittClassForm, SpinForm
 
-# Create your views here.
+
+# Return home
 
 
 def home(request):
     return render(request, "home/home_page.html")
+
+
+# Log In function
 
 
 def login_request(request):
@@ -33,10 +37,16 @@ def login_request(request):
     return render(request, "home/login.html", context={"login_form": form})
 
 
+# Log out function
+
+
 def logout_request(request):
     logout(request)
     messages.info(request, "You have successfully logged out.")
     return redirect('home')
+
+
+# Register Request
 
 
 def register_request(request):
@@ -55,6 +65,8 @@ def register_request(request):
                   context={"register_form": form})
 
 
+# Booking Page view
+
 def booking(request):
 
     SpinClass = SpinClasses.objects.all()
@@ -69,6 +81,8 @@ def booking(request):
     }
     return render(request, "home/booking_page.html", context)
 
+
+# Booking view function
 
 def bookingin(request):
 
@@ -85,6 +99,9 @@ def bookingin(request):
     return render(request, "home/bookingin.html", context)
 
 
+# Booking a PT Class Function
+
+
 def bookinginSes(request):
 
     if request.method == 'POST':
@@ -99,6 +116,9 @@ def bookinginSes(request):
     }
 
     return render(request, "home/bookingin.html", context)
+
+
+# Booking a Hiit Class
 
 
 def hiitclass(request):
@@ -211,6 +231,42 @@ def editingspin(request, item_id):
             return redirect("booking")
 
     return render(request, 'home/editinghiit.html', context)
+
+
+def deletehiit(request, item_id):
+    item = get_object_or_404(hittclasses, id=item_id)
+    Book = HittClassForm(instance=item)
+    context = {
+        'form': Book
+    }
+    return render(request, 'home/deletehiit.html', context)
+
+
+def deleteassessment(request, item_id):
+    item = get_object_or_404(hittclasses, id=item_id)
+    Book = BookingPT(instance=item)
+    context = {
+        'form': Book
+    }
+    return render(request, 'home/deleteassessment.html', context)
+
+
+def deletept(request, item_id):
+    item = get_object_or_404(hittclasses, id=item_id)
+    Book = BookingPT(instance=item)
+    context = {
+        'form': Book
+    }
+    return render(request, 'home/deletept.html', context)
+
+
+def deletespin(request, item_id):
+    item = get_object_or_404(hittclasses, id=item_id)
+    Book = SpinForm(instance=item)
+    context = {
+        'form': Book
+    }
+    return render(request, 'home/deletespin.html', context)
 
 
 def deleting(request, item_id):
