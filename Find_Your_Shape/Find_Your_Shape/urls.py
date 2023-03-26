@@ -49,10 +49,10 @@ urlpatterns = [
 
     # Deleting Items
 
-    path('deleting<item_id>', views.deleting, name='deleting'),
-    path('deletingpt<item_id>', views.deletingpt, name='deletingpt'),
-    path('deletehiit<item_id>', views.deletinghiit, name='deletinghiit'),
-    path('deletingspin<item_id>', views.deletingspin, name='deletingspin'),
+    path('deleting/<item_id>', views.deleting, name='deleting'),
+    path('deletingpt/<item_id>', views.deletingpt, name='deletingpt'),
+    path('deletinghiit/<item_id>', views.deletinghiit, name='deletinghiit'),
+    path('deletingspin/<item_id>', views.deletingspin, name='deletingspin'),
 
     # Register and log in paths
 
