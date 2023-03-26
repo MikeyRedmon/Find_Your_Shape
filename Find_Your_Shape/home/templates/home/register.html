@@ -41,7 +41,7 @@
 <body>
     <div class="container py-5">
         <h2 class="secondhead">Register</h2>
-        <form method="POST" action="register">
+        <form method="POST" action="register" class="mainparagraph list-form">
             {% csrf_token %}
             {{ register_form.as_p}}
             <button class="btnprime" type="submit">Register</button>

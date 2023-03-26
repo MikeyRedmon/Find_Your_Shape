@@ -8,33 +8,39 @@
 .main{
     font-family: 'Oswald', sans-serif;
     color: whitesmoke;
+    text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .secondhead{
     font-family: 'Oswald', sans-serif;
     color: whitesmoke;
+    text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .thirdhead{
     font-family: 'Oswald', sans-serif;
     color: whitesmoke;
+    text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .bookingLink{
     text-transform: none;
     text-decoration: none;
     font-family: 'Oswald', sans-serif;
-    
+    text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .mainparagraph{
     font-family: 'Raleway', sans-serif;
     color: white;
+    text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .error{
-  text-decoration: overline;
+  text-decoration: underline;
   color: brown;
+  background-color: #06f;
+  width: 13%;
 }
 
 /* Styling for navigation items */
@@ -43,17 +49,20 @@
     font-family: 'Raleway', sans-serif;
     text-decoration: none;
     text-align: right;
+    text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .nav-link{
   color:whitesmoke;
   text-decoration: none;
   text-transform: capitalize;
+  text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .nav-link:hover {
   color: chocolate;
 }
+
 
 /* Table specific styling */
 
@@ -64,12 +73,19 @@
 
 /* Element Specific Styling */
 
-#list-inline, li {
+li {
     font-family: 'Raleway', sans-serif;
     text-align: right;
     display: inline;
     
 }
+
+.list-form{
+  
+  display: block;
+  
+}
+
 
 footer, ul {
     font-family: 'Raleway', sans-serif;

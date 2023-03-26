@@ -1,6 +1,4 @@
-{% load static %}
-<link rel="stylesheet" href="{% static '/css/style.css' %}">
-<div class="modal fade" id="deleteHiitModel" tabindex="-1" aria-labelledby="deleteHiitModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteHiitModel" tabindex="-1" aria-labelledby="deleteHiitModalLabel" aria-hidden="true" style="display:none;"> 
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -11,14 +9,30 @@
         <H2 class="secondhead">
           Are you sure you wish to delete?
         </H2>
-        <form action="">
+        <form action="POST">
           {% csrf_token %}
           {{ form.as_p }}
+          <a href="">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          </a>
+          <a href="/deleting/{{ item.id }}">
           <button type="submit" class="btn btn-primary">Confirm Delete</button>
+          </a>
         </form>
       </div>
     </div>
   </div>
 </div>
 </div>
+<script>
+  const dltbutton = document.getElementById('dltbutton');
+  const deleteModel = document.getElementById('deleteHiitModel');
+  dltbutton.addEventListener('click', function(){
+    if(deleteModel.style.display === 'none'){
+      deleteModel.style.display = 'block';
+    }
+    else{
+      deleteModel.style.display = 'none';
+    }
+  })
+</script>

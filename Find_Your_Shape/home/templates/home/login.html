@@ -40,8 +40,8 @@
 </header>
 <body>
     <div class="container py-5">
-        <h2>Login</h2>
-        <form method="POST">
+        <h2 class="secondhead" >Login</h2>
+        <form method="POST" class="mainparagraph">
           {% csrf_token %}
           {{ login_form.as_p }}
           <button class="btnprime" type="submit">Login</button>

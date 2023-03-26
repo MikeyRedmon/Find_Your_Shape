@@ -284,7 +284,6 @@ Media | All media assets are displayed properly, have no pixelation or stretched
 Responsiveness | Check every element on-page for consistent scalability in mobile, tablet and desktop view.| PASS
 Accessibility | Checked the accessibility of the page using lighthouse| PASS
 Edit Booking Form | Checked the form submits only when all required fields are filled out. | PASS
-Form validation | Checked that the telephone number input only allows number input and not any text | PASS
 
 ### Register page
 TEST            | OUTCOME                          | PASS / FAIL  

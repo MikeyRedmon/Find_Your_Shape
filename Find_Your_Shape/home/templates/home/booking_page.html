@@ -68,12 +68,11 @@
 
                 </td>
                 <td>
-
-                    <a href="/deleting/{{ item.id }}">
-                        <button class="btneddel">
+                    
+                        <button class="btneddel" id="dltbutton">
                             Delete
                         </button>
-                    </a>
+                    
 
                     {% endif %}
                 </td>
@@ -210,7 +209,10 @@
         </section>
 
         <!-- Include Popup Models -->
-       
+        {% include './deletehiit.html' %}
+        <!--  {% include './deletept.html' %}
+        {% include './deletespin.html' %}
+        {% include './deleteassessment.html' %} -->
 <footer>
 </footer>
 

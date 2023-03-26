@@ -249,7 +249,7 @@ def editingspin(request, item_id):
     return render(request, 'home/editinghiit.html', context)
 
 
-# Deleting a Hiit Class
+# Deleting a Hiit Class Modal popup
 
 def deletehiit(request, item_id):
     item = get_object_or_404(hittclasses, id=item_id)
@@ -260,10 +260,11 @@ def deletehiit(request, item_id):
     return render(request, 'home/deletehiit.html', context)
 
 
-# Deleting an Assessment
+# Deleting an Assessment Modal popup
 
 
 def deleteassessment(request, item_id):
+    ''''''
     item = get_object_or_404(hiitbook, id=item_id)
     Book = BookingPT(instance=item)
     context = {
@@ -272,7 +273,7 @@ def deleteassessment(request, item_id):
     return render(request, 'home/deleteassessment.html', context)
 
 
-# Deleting a PT session
+# Deleting a PT session Modal popup
 
 
 def deletept(request, item_id):
@@ -284,7 +285,7 @@ def deletept(request, item_id):
     return render(request, 'home/deletept.html', context)
 
 
-# Deleting a Spin class
+# Deleting a Spin class Modal popup
 
 
 def deletespin(request, item_id):
@@ -299,7 +300,7 @@ def deletespin(request, item_id):
 # Delete functions for all models
 
 def deleting(request, item_id):
-    item = get_object_or_404(hittclasses, id=item_id)
+    item = get_object_or_404(hiitbook, id=item_id)
     item.delete()
     return redirect("booking")
 
