@@ -39,14 +39,6 @@ urlpatterns = [
     path('editingspin/<item_id>', views.editingspin, name='editspin'),
     path('editingpt/<item_id>', views.editingpt, name='editpt'),
 
-    # Deleting Modals
-
-    path('deletehiit/<item_id>', views.deletehiit, name='deletehiit'),
-    path('deleteassessment/<item_id>', views.deleteassessment,
-         name='deleteassessment'),
-    path('deletept/<item_id>', views.deletept, name='deletept'),
-    path('deletespin/<item_id>', views.deletespin, name='deletespin'),
-
     # Deleting Items
 
     path('deleting/<item_id>', views.deleting, name='deleting'),

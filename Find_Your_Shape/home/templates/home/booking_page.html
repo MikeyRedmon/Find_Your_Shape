@@ -8,8 +8,9 @@
     {% load static %}
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
 </head>
+<img src="{% static 'images/background.jpg' %}" alt="A black and gold vector design background image" id="bgimage">
+<div class="content">
 <body>
-    <img src="{% static 'images/background.jpg' %}" alt="A black and gold vector design background image" id="bgimage">
     <header>
         <h1 class="main">
             Book Your Classes and Assessments here!
@@ -43,7 +44,7 @@
                 {% endif %}
         </nav>
     </header>
-    <section>
+   
         <!-- Hiit Classes -->
     <h2 class="secondhead">
         Check out our HIIT Class Schedule
@@ -68,12 +69,11 @@
 
                 </td>
                 <td>
-                    
+                    <a href="/deletinghiit/{{ item.id }}">
                         <button class="btneddel" id="dltbutton">
                             Delete
                         </button>
-                    
-
+                    </a>
                     {% endif %}
                 </td>
                 </tr>
@@ -85,7 +85,7 @@
         <a class="nav-link" href="{% url 'hiitclasses' %}">Book your slot!</a>
     </h5>
     {% endif %}
-    <section>
+   
         <!-- Spin Classes -->
     <h2 class="secondhead">
         Here are our Spin Classes
@@ -127,8 +127,7 @@
         <a class="nav-link" href="{% url 'spinclasses' %}">Book your slot!</a>
     </h5>
     {% endif %}
-    </section>
-    <section>
+
         <!-- Assessments -->
     <h2 class="secondhead">
         Book an Assessment
@@ -165,8 +164,8 @@
     <h5 class="bookingLink">
         <a class="nav-link" href="{% url 'bookingin' %}">Book your slot!</a>
     </h5>
-    </section>
-    <section>
+    
+    
         <!-- PT Sessions -->
         <h2 class="secondhead">
             Book A Personal Training Session
@@ -206,13 +205,5 @@
         <h5 class="bookingLink">
             <a class="nav-link" href="{% url 'bookinginSes' %}">Book your slot!</a>
         </h5>
-        </section>
 
-        <!-- Include Popup Models -->
-        {% include './deletehiit.html' %}
-        <!--  {% include './deletept.html' %}
-        {% include './deletespin.html' %}
-        {% include './deleteassessment.html' %} -->
-<footer>
-</footer>
-
+</div>
