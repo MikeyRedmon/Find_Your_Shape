@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['michaelredmond-find-your-shape.herokuapp.com', 'localhost', '127.0.0.1:8000' ]
+ALLOWED_HOSTS = ['michaelredmond-find-your-shape.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -48,9 +48,9 @@ INSTALLED_APPS = [
 
 CLOUDINARY_STORAGE = {
     
-    CLOUD_NAME = os.environ.get('CLOUD_NAME', ''),
-    API_KEY = os.environ.get('API_KEY', ''),
-    API_SECRET: os.environ.get('API_SECRET', '')
+    'CLOUD_NAME': 'dvbbceeek',
+    'API_KEY': '997642176826121',
+    'API_SECRET': 'iSlC_acMGf3YS4pBo23dh4n5SiY'
     
 }
 
