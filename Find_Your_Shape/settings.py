@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -46,13 +46,11 @@ INSTALLED_APPS = [
     
 ]
 
-CLOUDINARY_STORAGE = {
+
     
-    'CLOUD_NAME': 'dvbbceeek',
-    'API_KEY': '997642176826121',
-    'API_SECRET': 'iSlC_acMGf3YS4pBo23dh4n5SiY'
+CLOUDINARY_URL = 'cloudinary://997642176826121:iSlC_acMGf3YS4pBo23dh4n5SiY@dvbbceeek'
     
-}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
