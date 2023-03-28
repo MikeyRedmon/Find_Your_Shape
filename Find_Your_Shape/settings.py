@@ -46,13 +46,13 @@ INSTALLED_APPS = [
     
 ]
 
-CLOUDINARY_STORAGE = {
+
     
-    'CLOUD_NAME': 'dvbbceeek',
-    'API_KEY': '997642176826121',
-    'API_SECRET': 'iSlC_acMGf3YS4pBo23dh4n5SiY'
+CLOUDINARY_CLOUD_NAME = os.environ.get('CLOUD_NAME', '') 
+CLOUDINARY_API_KEY = os.environ.get('API_KEY', '')
+CLOUDINARY_API_SECRET = os.environ.get('API_SECRET', '') 
     
-}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
