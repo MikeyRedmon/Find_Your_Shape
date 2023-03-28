@@ -46,13 +46,7 @@ INSTALLED_APPS = [
     
 ]
 
-cloudinary_storage = {
-    
-    'CLOUD_NAME': 'dvbbceeek',
-    'API_KEY': '997642176826121',
-    'API_SECRET': 'iSlC_acMGf3YS4pBo23dh4n5SiY'
-    
-}
+CLOUDINARY_URL = 'http://res.cloudinary.com/dvbbceeek'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
