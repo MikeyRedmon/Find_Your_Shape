@@ -1,1 +1,1 @@
-web: gunicorn django_Find_Your_Shape.wsgi:application
+web: gunicorn Find_Your_Shape/django_Find_Your_Shape.wsgi:application --log-file -
