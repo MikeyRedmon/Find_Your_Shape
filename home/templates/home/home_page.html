@@ -18,23 +18,23 @@
             {% if user.is_authenticated %}
             
             <li class="nav-item">
-              <a class="nav-link" href="booking">Welcome, {{user.username}}</a>
+              <a class="nav-link" href="{% url 'booking' %}">Welcome, {{user.username}}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'booking' %}">Book Here</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="logout">Logout</a>
+                <a class="nav-link" href="{% url 'login' %}">Logout</a>
             </li>
 
             {% else %}
       
 
             <li class="nav-item">
-                <a class="nav-link" href="register">Register Here</a>
+                <a class="nav-link" href="{% url 'register' %}">Register Here</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="login">Login Here</a>
+                <a class="nav-link" href="{% url 'login' %}">Login Here</a>
             </li>
             {% endif %}
     </nav>
