@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <img src="{% static 'images/background.jpg' %}" alt="A black and gold vector design background image" id="bgimage">
 <div class="content">
@@ -61,7 +61,7 @@
 
                     {% if user.is_staff  %}
 
-                    <a href="/editinghiit/{{ item.id }}">
+                    <a href="editinghiit/{{ item.id }}">
                         <button class="btneddel">
                             Edit
                         </button>
@@ -69,7 +69,7 @@
 
                 </td>
                 <td>
-                    <a href="/deletinghiit/{{ item.id }}">
+                    <a href="deletinghiit/{{ item.id }}">
                         <button class="btneddel" id="dltbutton">
                             Delete
                         </button>
@@ -102,7 +102,7 @@
                 {% if user.is_staff  %}
                 <td>
 
-                    <a href="/editingspin/{{ item.id }}">
+                    <a href="editingspin/{{ item.id }}">
                         <button class="btneddel">
                             Edit
                         </button>
@@ -111,7 +111,7 @@
                 </td>
                 <td>
 
-                    <a href="/deletingspin/{{ item.id }}">
+                    <a href="deletingspin/{{ item.id }}">
                         <button class="btneddel">
                             Delete
                         </button>
@@ -142,7 +142,7 @@
             
             <td>
                 
-                <a href="/editing/{{ item.id }}" class="align-center">
+                <a href="editing/{{ item.id }}" class="align-center">
                     <button class="btneddel" class="align-center">
                         Edit
                     </button>
@@ -151,7 +151,7 @@
             </td>
             <td class="align-center">
 
-                <a href="/deleting/{{ item.id }}" class="align-center">
+                <a href="deleting/{{ item.id }}" class="align-center">
                     <button class="btneddel">
                         Delete 
                     </button>
@@ -182,7 +182,7 @@
                 
                 <td>
                     
-                    <a href="/editingpt/{{ item.id }}">
+                    <a href="editingpt/{{ item.id }}">
                         <button class="btneddel">
                             Edit
                         </button>
@@ -191,7 +191,7 @@
                 </td>
                 <td>
 
-                    <a href="/deletingpt/{{ item.id }}">
+                    <a href="deletingpt/{{ item.id }}">
                         <button class="btneddel">
                             Delete
                         </button>
