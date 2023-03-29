@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["michaelredmond-find-your-shape.herokuapp.com", "localhost", '127.0.0.1']
 
@@ -78,12 +78,12 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Find_Your_Shape.wsgi.application'
-TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if DEBUG == False:
+if DEBUG is False:
     DATABASE_URL = os.environ.get('DATABASE_URL', '')
 else:
     DATABASES = {
