@@ -47,7 +47,7 @@
           {{ login_form.as_p }}
           <button class="btnprime" type="submit">Login</button>
         </form>
-        <p class="text-center mainparagraph">Don't have an account? <a class="nav-link" href="/register">Create an account</a>.</p>
+        <p class="text-center mainparagraph">Don't have an account? <a class="nav-link" href="{% url 'register' %}">>Create an account</a>.</p>
       </div>
       <div>
         {% for message in messages %}

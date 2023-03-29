@@ -48,7 +48,7 @@
             <button class="btnprime" type="submit">Register</button>
         </form>
         <p class="mainparagraph">
-            If you already have an account, <a class="nav-link" href="login">login</a> instead.
+            If you already have an account, <a class="nav-link" href="{% url 'login' %}">login</a> instead.
         </p>
         <div>
             {% for message in messages %}

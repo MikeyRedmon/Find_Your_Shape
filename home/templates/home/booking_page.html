@@ -21,13 +21,13 @@
                 {% if user.is_authenticated %}
 
                 <li class="nav-item">
-                  <a class="nav-link" href="booking">Welcome, {{user.username}}</a>
+                  <a class="nav-link" href="{% url 'booking' %}">Welcome, {{user.username}}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'booking' %}">Book Here</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="logout">Logout</a>
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                 </li>
     
                 {% else %}
@@ -36,10 +36,10 @@
                     <a class="nav-link"  href="{% url 'booking' %}">Book Here</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  href="register">Register Here</a>
+                    <a class="nav-link"  href="{% url 'register' %}">Register Here</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  href="login">Login Here</a>
+                    <a class="nav-link"  href="{% url 'login' %}">Login Here</a>
                 </li>
                 {% endif %}
         </nav>
@@ -61,7 +61,7 @@
 
                     {% if user.is_staff  %}
 
-                    <a href="editinghiit/{{ item.id }}">
+                    <a href="{% url 'booking' {{ item.id }}%}">
                         <button class="btneddel">
                             Edit
                         </button>
@@ -69,7 +69,7 @@
 
                 </td>
                 <td>
-                    <a href="deletinghiit/{{ item.id }}">
+                    <a href="{% url 'deletinghiit' {{ item.id }}%}">
                         <button class="btneddel" id="dltbutton">
                             Delete
                         </button>
@@ -102,7 +102,7 @@
                 {% if user.is_staff  %}
                 <td>
 
-                    <a href="editingspin/{{ item.id }}">
+                    <a href="{% url 'editingspin' {{ item.id }}%}">
                         <button class="btneddel">
                             Edit
                         </button>
@@ -111,7 +111,7 @@
                 </td>
                 <td>
 
-                    <a href="deletingspin/{{ item.id }}">
+                    <a href="{% url 'deletingspin' {{ item.id }}%}">
                         <button class="btneddel">
                             Delete
                         </button>
@@ -142,7 +142,7 @@
             
             <td>
                 
-                <a href="editing/{{ item.id }}" class="align-center">
+                <a href="{% url 'editing' {{ item.id }}%}" class="align-center">
                     <button class="btneddel" class="align-center">
                         Edit
                     </button>
@@ -151,7 +151,7 @@
             </td>
             <td class="align-center">
 
-                <a href="deleting/{{ item.id }}" class="align-center">
+                <a href="{% url 'deleting' {{ item.id }}%}" class="align-center">
                     <button class="btneddel">
                         Delete 
                     </button>
@@ -182,7 +182,7 @@
                 
                 <td>
                     
-                    <a href="editingpt/{{ item.id }}">
+                    <a href="{% url 'editingpt' {{ item.id }}%}"> 
                         <button class="btneddel">
                             Edit
                         </button>
@@ -191,7 +191,7 @@
                 </td>
                 <td>
 
-                    <a href="deletingpt/{{ item.id }}">
+                    <a href="{% url 'deletingpt' {{ item.id }}%}">
                         <button class="btneddel">
                             Delete
                         </button>
