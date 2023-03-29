@@ -4,9 +4,9 @@ from django.db import models
 
 
 class hiitbook(models.Model):
-    name = models.CharField(max_length=10, null=False, blank=False)
+    name = models.CharField(max_length=25, null=False, blank=False)
     focus = models.CharField(max_length=50, null=False, blank=False)
-    time = models.DateTimeField(max_length=10)
+    time = models.DateTimeField(null=False, blank=False)
 
     def __str__(self):
         return self.name
@@ -15,7 +15,7 @@ class hiitbook(models.Model):
 class SpinClasses(models.Model):
     name = models.CharField(max_length=10, null=False, blank=False)
     genre = models.CharField(max_length=10, null=False, blank=False)
-    time = models.DateTimeField(max_length=10)
+    time = models.DateTimeField(null=False, blank=False)
 
     def __str__(self):
         return self.name
