@@ -20,12 +20,17 @@
 </header>
 <body>
 <!-- Form to edit Spin classes -->
+<div>
+    {% for message in messages %}
+    <h3 class="message"> {{message}} </h3>
+    {% endfor %}
+</div>
     <form method="POST" class="mainparagraph">
         {% csrf_token %}
         {{ form.as_p }}
         <div>
             <p>
-            <button class="btneddel" type="submit" onclick="alert('Your class has been changed!')">Edit the class</button>
+            <button class="btneddel" type="submit" >Edit the class</button>
             </p>
         </div>
     </form>

@@ -20,15 +20,20 @@
 </header>
 <body>
 <!-- Form to submit for PT Sessions -->
+<div>
+    {% for message in messages %}
+    <h3 class="message"> {{message}} </h3>
+    {% endfor %}
+  </div>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <div>
-            <p>
+            <p class="mainparagraph">
                 Time is formatted as Year-Month-Day HH:MM. 
             </p>
             <p>
-            <button class="btneddel" type="submit" onclick="alert('Thank you for booking with us!')">Confirm Your Booking!</button>
+            <button class="btneddel" type="submit">Confirm Your Booking!</button>
             </p>
         </div>
     </form>

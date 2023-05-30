@@ -91,6 +91,9 @@ def bookingin(request):
         if form.is_valid():
             form.save()
             return redirect("booking")
+        else:
+            messages.error(request, "Invalid Data, Please try again")
+            
 
     formSes = BookingForm()
     context = {
@@ -109,6 +112,9 @@ def bookinginSes(request):
         if form.is_valid():
             form.save()
             return redirect("booking")
+        else:
+            messages.error(request, "Invalid Data, Please try again")
+           
 
     Book = BookingPT()
     context = {
@@ -128,6 +134,8 @@ def hiitclass(request):
         if form.is_valid():
             form.save()
             return redirect("booking")
+        else:
+            messages.error(request, "Invalid Data, Please try again")
 
     Hiit = HittClassForm()
     context = {

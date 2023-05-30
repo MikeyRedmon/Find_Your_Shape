@@ -20,12 +20,17 @@
 </header>
 <body>
 <!-- Form to edit HIIT Classes -->
+<div>
+    {% for message in messages %}
+    <h3 class="message"> {{message}} </h3>
+    {% endfor %}
+</div>
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <div>
             <p>
-            <button class="btneddel" type="submit" onclick="alert('The Class has been edited')">Edit The Class</button>
+            <button class="btneddel" type="submit">Edit The Class</button>
             </p>
         </div>
     </form>

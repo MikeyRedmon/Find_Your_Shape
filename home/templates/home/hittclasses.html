@@ -20,12 +20,17 @@
 </header>
 <body>
 <!-- Form to add Hitt classes Bookings -->
+<div>
+    {% for message in messages %}
+    <h3 class="message"> {{message}} </h3>
+    {% endfor %}
+</div>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <div>
             <p>
-            <button class="btnprime" type="submit" onclick="alert('New Class Added')">Add the new class</button>
+            <button class="btnprime" type="submit">Add the new class</button>
             </p>
         </div>
     </form>
