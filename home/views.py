@@ -28,11 +28,9 @@ def login_request(request):
                 messages.info(request, f"You are now logged in {username}")
                 return redirect("login")
             else:
-                messages.error(request, "Invalid Username or passward")
-                return redirect("login")
+                messages.error(request, "Invalid Username or passward")  
         else:
-            messages.error(request, "Invalid Username or passward")
-            return redirect("login")
+            messages.error(request, "Invalid Username or passward") 
     form = AuthenticationForm()
     return render(request, "home/login.html", context={"login_form": form})
 
@@ -43,7 +41,6 @@ def login_request(request):
 def logout_request(request):
     logout(request)
     messages.info(request, "You have successfully logged out.")
-    return redirect('home')
 
 
 # Register Request
@@ -111,7 +108,7 @@ def bookinginSes(request):
         form = BookingPT(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("booking")
+            messages.info(request, "Invalid Data, Please try again")
         else:
             messages.error(request, "Invalid Data, Please try again")
            
@@ -155,6 +152,8 @@ def SpinBooking(request):
         if form.is_valid():
             form.save()
             return redirect("booking")
+        else:
+            messages.error(request, "Invalid Data, Please try again")
 
     Spin = SpinForm()
     context = {
@@ -179,6 +178,8 @@ def editing(request, item_id):
         if formSes.is_valid():
             formSes.save()
             return redirect("booking")
+        else:
+            messages.error(request, "Invalid Data, Please try again")
 
     return render(request, 'home/editing.html', context)
 
@@ -198,6 +199,8 @@ def editingspin(request, item_id):
         if form.is_valid():
             form.save()
             return redirect("booking")
+        else:
+            messages.error(request, "Invalid Data, Please try again")
 
     return render(request, 'home/editing.html', context)
 
@@ -217,6 +220,8 @@ def editingpt(request, item_id):
         if formSes.is_valid():
             formSes.save()
             return redirect("booking")
+        else:
+            messages.error(request, "Invalid Data, Please try again")
 
     return render(request, 'home/editingpt.html', context)
 
@@ -235,6 +240,8 @@ def editinghiit(request, item_id):
         if form.is_valid():
             form.save()
             return redirect("booking")
+        else:
+            messages.error(request, "Invalid Data, Please try again")
 
     return render(request, 'home/editinghiit.html', context)
 
@@ -253,6 +260,8 @@ def editingspin(request, item_id):
         if form.is_valid():
             form.save()
             return redirect("booking")
+        else:
+            messages.error(request, "Invalid Data, Please try again")s
 
     return render(request, 'home/editinghiit.html', context)
 
@@ -263,22 +272,26 @@ def editingspin(request, item_id):
 def deleting(request, item_id):
     item = get_object_or_404(hittclasses, id=item_id)
     item.delete()
+    messages.info(request, "Booking removed")
     return redirect("booking")
 
 
 def deletingpt(request, item_id):
     item = get_object_or_404(PtClasses, id=item_id)
     item.delete()
+    messages.info(request, "Booking removed")
     return redirect("booking")
 
 
 def deletinghiit(request, item_id):
     item = get_object_or_404(hiitbook, id=item_id)
     item.delete()
+    messages.info(request, "Booking removed")
     return redirect("booking")
 
 
 def deletingspin(request, item_id):
     item = get_object_or_404(SpinClasses, id=item_id)
     item.delete()
+    messages.info(request, "Booking removed")
     return redirect("booking")
