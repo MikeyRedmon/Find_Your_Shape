@@ -108,7 +108,7 @@ def bookinginSes(request):
         form = BookingPT(request.POST)
         if form.is_valid():
             form.save()
-            messages.info(request, "Invalid Data, Please try again")
+            messages.info(request, "Your Booking has been saved!")
         else:
             messages.error(request, "Invalid Data, Please try again")
            
@@ -131,6 +131,7 @@ def hiitclass(request):
         if form.is_valid():
             form.save()
             return redirect("booking")
+            messages.info(request, "Your Booking has been saved!")
         else:
             messages.error(request, "Invalid Data, Please try again")
 
@@ -152,6 +153,7 @@ def SpinBooking(request):
         if form.is_valid():
             form.save()
             return redirect("booking")
+            messages.info(request, "Your Booking has been saved!")
         else:
             messages.error(request, "Invalid Data, Please try again")
 
@@ -177,6 +179,7 @@ def editing(request, item_id):
         formSes = BookingForm(request.POST, instance=item)
         if formSes.is_valid():
             formSes.save()
+            messages.info(request, "Your Booking has been saved!")
             return redirect("booking")
         else:
             messages.error(request, "Invalid Data, Please try again")
@@ -199,6 +202,7 @@ def editingspin(request, item_id):
         if form.is_valid():
             form.save()
             return redirect("booking")
+            messages.info(request, "Your Booking has been saved!")
         else:
             messages.error(request, "Invalid Data, Please try again")
 
@@ -220,6 +224,7 @@ def editingpt(request, item_id):
         if formSes.is_valid():
             formSes.save()
             return redirect("booking")
+            messages.info(request, "Your Booking has been saved!")
         else:
             messages.error(request, "Invalid Data, Please try again")
 
@@ -240,6 +245,7 @@ def editinghiit(request, item_id):
         if form.is_valid():
             form.save()
             return redirect("booking")
+            messages.info(request, "Your Booking has been saved!")
         else:
             messages.error(request, "Invalid Data, Please try again")
 
@@ -260,8 +266,9 @@ def editingspin(request, item_id):
         if form.is_valid():
             form.save()
             return redirect("booking")
+            messages.info(request, "Your Booking has been saved!")
         else:
-            messages.error(request, "Invalid Data, Please try again")s
+            messages.error(request, "Invalid Data, Please try again")
 
     return render(request, 'home/editinghiit.html', context)
 

@@ -44,7 +44,11 @@
                 {% endif %}
         </nav>
     </header>
-   
+    <div class="align-center">
+        {% for message in messages %}
+        <h3 class="message"> {{message}} </h3>
+        {% endfor %}
+    </div>
         <!-- Hiit Classes -->
     <h2 class="secondhead">
         Check out our HIIT Class Schedule
